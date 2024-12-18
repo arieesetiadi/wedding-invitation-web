@@ -99,8 +99,8 @@
     color: var(--color-primary) !important;
 }
 
-.text-primary-dark {
-    color: var(--color-primary-dark) !important;
+.text-primary-light {
+    color: var(--color-primary-light) !important;
 }
 
 .text-secondary {
@@ -111,20 +111,16 @@
     color: var(--color-secondary-light) !important;
 }
 
-.text-danger {
-    color: var(--color-danger) !important;
-}
-
 .text-light {
     color: var(--color-light) !important;
 }
 
 .text-white {
-    color: var(--color-white) !important;
+    color: white !important;
 }
 
-.text-dark {
-    color: var(--color-dark) !important;
+.text-black {
+    color: black !important;
 }
 
 /* Background Color */
@@ -132,8 +128,8 @@
     background-color: var(--color-primary) !important;
 }
 
-.bg-primary-dark {
-    background-color: var(--color-primary-dark) !important;
+.bg-primary-light {
+    background-color: var(--color-primary-light) !important;
 }
 
 .bg-secondary {
@@ -144,20 +140,16 @@
     background-color: var(--color-secondary-light) !important;
 }
 
-.bg-danger {
-    background-color: var(--color-danger) !important;
-}
-
 .bg-light {
     background-color: var(--color-light) !important;
 }
 
 .bg-white {
-    background-color: var(--color-white) !important;
+    background-color: white !important;
 }
 
-.bg-dark {
-    background-color: var(--color-dark) !important;
+.bg-black {
+    background-color: black !important;
 }
 
 /* Border Radius */
