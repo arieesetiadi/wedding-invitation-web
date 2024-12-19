@@ -4,8 +4,8 @@
     {{-- <main class="d-none"> --}}
     <main>
         @include('sections.section-hero')
-        {{-- @include('sections.section-about')
-        @include('sections.section-gallery')
+        @include('sections.section-about')
+        {{-- @include('sections.section-gallery')
         @include('sections.section-countdown')
         @include('sections.section-maps')
         @include('sections.section-quotes')

@@ -130,57 +130,6 @@ main.openned #hero .btn-invitation {
     padding: 0.6rem 1.8rem;
 }
 
-#hero .banner {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../images/general/photo-quotes-1.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center calc(55%);
-    overflow: hidden;
-}
-
-#hero .banner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(68, 29, 22, 0.2);
-    z-index: 1;
-}
-
-#hero .main {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    z-index: 2;
-}
-
-#hero .main .content {
-    margin-bottom: 7%;
-}
-
-#hero .gradient {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    padding-bottom: 4rem;
-    background: rgb(255, 255, 255);
-    background: -moz-linear-gradient(180deg, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%);
-    background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 85%, rgba(255, 255, 255, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#ffffff", GradientType=1);
-}
-
-#about {
-    min-width: 100vw;
-    min-height: 100vh;
-}
-
 #pre-gallery,
 #pre-comments {
     background-image: url('../images/illustrations/wave-top.png');

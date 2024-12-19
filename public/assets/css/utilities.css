@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Italianno&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Italianno&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 /* Font Family */
 .ff-fira-sans {
@@ -8,6 +9,10 @@
 
 .ff-italianno {
     font-family: "Italianno", serif !important;
+}
+
+.ff-dancing-script {
+    font-family: "Dancing Script", serif !important;
 }
 
 .ff-inter {
@@ -32,6 +37,10 @@
 }
 
 /* Font Size */
+.fs-150 {
+    font-size: 150px !important;
+}
+
 .fs-96 {
     font-size: 96px !important;
 }
@@ -119,6 +128,15 @@
 
 .text-black {
     color: black !important;
+}
+
+/* Text Decoration */
+.text-normal {
+    text-decoration: none;
+}
+
+.text-underline {
+    text-decoration: underline;
 }
 
 /* Background Color */
@@ -229,6 +247,10 @@
     /* Font Size*/
     .fs-xs-96 {
         font-size: 96px !important;
+    }
+
+    .fs-xs-64 {
+        font-size: 64px !important;
     }
 
     .fs-xs-56 {
