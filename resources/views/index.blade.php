@@ -5,8 +5,8 @@
     <main>
         @include('sections.section-hero')
         @include('sections.section-about')
-        {{-- @include('sections.section-gallery')
-        @include('sections.section-countdown')
+        @include('sections.section-gallery')
+        {{-- @include('sections.section-countdown')
         @include('sections.section-maps')
         @include('sections.section-quotes')
         @include('sections.section-gift')

@@ -8,21 +8,13 @@ const baseUrl = document.querySelector('meta[name=url]').getAttribute('content')
 
 document.addEventListener('DOMContentLoaded', function () {
     new Swiper(".swiper-gallery", {
-        loop: true,
-        spaceBetween: 10,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        thumbs: {
-            swiper: new Swiper(".swiper-gallery-thumb", {
-                loop: true,
-                spaceBetween: 10,
-                slidesPerView: 4,
-                freeMode: true,
-                watchSlidesProgress: true,
-            }),
-        },
+        spaceBetween: 20,
+        slidesPerView: 1.2,
+        breakpoints: {
+            1024: {
+                slidesPerView: 3,
+            }
+        }
     });
 
     setInterval(() => {
@@ -171,7 +163,7 @@ function showPartnerInput(event) {
 function fetchRsvps(limit = 5, noIncrement = false) {
     const commentsWrapper = document.querySelector('.comments-wrapper');
     const comments = commentsWrapper.querySelectorAll('.comment-item');
-    
+
     let count = limit;
 
     if (noIncrement && comments.length <= limit) {
