@@ -10,7 +10,7 @@
 
 <body>
     @include('parts.part-loading')
-    @include('parts.part-onboarding')
+    {{-- @include('parts.part-onboarding') --}}
 
     @yield('content')
 

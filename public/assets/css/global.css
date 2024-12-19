@@ -45,7 +45,7 @@ audio {
 #loading .custom-loader::after {
     content: "";
     grid-area: 1/1;
-    --c: radial-gradient(farthest-side, #912728 92%, #0000);
+    --c: radial-gradient(farthest-side, var(--color-primary) 92%, #0000);
     background:
         var(--c) 50% 0,
         var(--c) 50% 100%,

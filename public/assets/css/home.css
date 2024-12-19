@@ -1,3 +1,73 @@
+main.openned #hero .btn-invitation {
+    display: none !important;
+}
+
+#hero .left {
+    background-image: url('/assets/images/general/hero-secondary.jpg');
+    background-position: center calc(75%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+}
+
+/* #hero .left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(119, 123, 98, 0.8);
+} */
+
+#hero .left .content {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+#hero .left .cta {
+    display: flex;
+    position: absolute;
+    /* align-items: center; */
+    justify-content: center;
+    top: 75%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+#hero .right {
+    display: none;
+    background-image: url('/assets/images/general/hero-primary.jpg');
+    background-position: center calc(78%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60%;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    #hero .left {
+        width: 40%;
+    }
+
+    #hero .right {
+        display: block;
+    }
+}
+
+/* --------------------------------------------------------------------- */
+/* OLD */
 .onboarding {
     position: absolute;
     width: 100vw;
