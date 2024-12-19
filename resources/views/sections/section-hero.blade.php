@@ -4,7 +4,7 @@
             <div class="col-md-5 h-100 px-0 left">
                 <div class="content">
                     <div class="text-white">
-                        <h2 class="text-center fs-15 ff-fira-sans mb-3">The Wedding of</h2>
+                        <h2 class="text-center fs-15 ff-fira-sans mb-3 text-uppercase">The Wedding of</h2>
                         <h1 class="text-center fs-64 ff-italianno mb-3">Billy & &nbsp;Diana</h1>
                         <h3 class="text-center fs-20 ff-fira-sans">15 ∙ 02 ∙ 2025</h3>
                     </div>

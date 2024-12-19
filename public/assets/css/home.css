@@ -107,10 +107,11 @@ main.openned #hero .btn-invitation {
 
 /* Mobile */
 @media screen and (max-width: 767px) {
+
     #gallery .swiper-slide img,
     #gallery img {
         height: 340px;
-    }    
+    }
 
     #gallery .gallery-additional {
         flex-direction: column;
@@ -141,10 +142,11 @@ main.openned #hero .btn-invitation {
 
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+
     #gallery .swiper-slide img,
     #gallery img {
         height: 400px;
-    }   
+    }
 
     #gallery .gallery-additional {
         flex-direction: column;
@@ -248,40 +250,10 @@ main.openned #hero .btn-invitation {
     padding: 0.6rem 1.8rem;
 }
 
-#countdown {
-    position: relative;
-    min-width: 100vw;
-    min-height: 400px;
-    display: grid;
-    place-items: center;
-    background-image: url('../images/general/photo-gallery-2.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center calc(10%);
-}
-
-#countdown::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(68, 29, 22, 0.5);
-    z-index: 1;
-}
-
-#countdown .content {
-    position: absolute;
-    z-index: 2;
-}
-
-#countdown .content .timer {
-    width: 144px;
-}
-
-#countdown .content .number {
-    line-height: 100%;
+#countdown .timer-days {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 5px rgba(119, 123, 98, 0.1);
 }
 
 #maps .maps-wrapper {
@@ -381,10 +353,6 @@ main.openned #hero .btn-invitation {
 
     .onboarding .main {
         margin-top: 15%;
-    }
-
-    #countdown .content .timer {
-        width: 25%;
     }
 
     #maps .maps-wrapper {

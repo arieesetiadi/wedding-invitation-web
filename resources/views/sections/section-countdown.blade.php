@@ -1,61 +1,32 @@
-<section id="countdown">
-    <div class="content w-100" data-aos="fade-in">
-        <h2 class="fs-48 fs-xs-32 ff-italiana mb-md-3 mb-3 text-center text-white">
+<section id="countdown" class="bg-light">
+    <div class="header mb-5">
+        <h2 class="text-primary fs-40 fw-700 ff-dancing-script px-lg-0 px-5 text-center">
             You're Invited
         </h2>
+    </div>
 
-        <div class="d-flex justify-content-center mb-md-5 mb-5">
-            <div class="d-flex align-items-center gap-2">
-                <img src="assets/images/icons/date-white.svg" alt="Calendar Icon">
-                <span class="date d-inline-block text-uppercase ff-inter fs-20 fs-xs-16 text-white">
-                    Sunday, July 14th 2024
-                </span>
-            </div>
+    <div class="content container">
+        <div class="d-flex justify-content-center mb-3">
+            <img width="18" height="18" src="{{ asset('assets/images/icons/calendar-black.svg') }}"
+                alt="Calendar icon">
         </div>
 
-        <div class="d-flex justify-content-center gap-3 px-4">
-            <!-- Days Counter -->
-            <div class="timer timer-days py-md-3 px-md-5 bg-light rounded px-2 py-4">
-                <span class="number d-block text-primary fs-40 fs-xs-24 fw-700 ff-playfair mb-1 text-center">
-                    12
-                </span>
+        <span class="d-block text-uppercase fs-18 fw-500 ff-fira-sans mb-2 text-center text-black">
+            Saturday
+        </span>
 
-                <span class="d-block text-primary text-uppercase fs-12 fw-400 ff-times-new-roman text-center">
-                    Days
-                </span>
-            </div>
+        <span class="d-block fs-32 fw-400 ff-fira-sans mb-5 text-center text-black">
+            15 February 2025
+        </span>
 
-            <!-- Hours Counter -->
-            <div class="timer timer-hours py-md-3 px-md-5 bg-light rounded px-2 py-4">
-                <span class="number d-block text-primary fs-40 fs-xs-24 fw-700 ff-playfair mb-1 text-center">
-                    01
-                </span>
-
-                <span class="d-block text-primary text-uppercase fs-12 fw-400 ff-times-new-roman text-center">
-                    Hours
-                </span>
-            </div>
-
-            <!-- Minutes Counter -->
-            <div class="timer timer-minutes py-md-3 px-md-5 bg-light rounded px-2 py-4">
-                <span class="number d-block text-primary fs-40 fs-xs-24 fw-700 ff-playfair mb-1 text-center">
-                    21
-                </span>
-
-                <span class="d-block text-primary text-uppercase fs-12 fw-400 ff-times-new-roman text-center">
-                    Minutes
-                </span>
-            </div>
-
-            <!-- Seconds Counter -->
-            <div class="timer timer-seconds py-md-3 px-md-5 bg-light rounded px-2 py-4">
-                <span class="number d-block text-primary fs-40 fs-xs-24 fw-700 ff-playfair mb-1 text-center">
-                    08
-                </span>
-
-                <span class="d-block text-primary text-uppercase fs-12 fw-400 ff-times-new-roman text-center">
-                    Seconds
-                </span>
+        <div class="d-flex justify-content-center">
+            <div class="timer-days d-flex align-items-center justify-content-center bg-primary rounded-40">
+                <div class="text-white">
+                    <span class="d-block fs-36 ff-fira-code number mb-1 text-center">
+                        {{-- Generated from script --}}
+                    </span>
+                    <span class="d-block fs-15 ff-fira-sans text-center">Days</span>
+                </div>
             </div>
         </div>
     </div>

@@ -17,9 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    setCountdown();
     setInterval(() => {
         setCountdown();
-    }, 1000);
+    }, 1000 * 60 * 60);
 
     fetchRsvps();
 });
@@ -55,6 +56,7 @@ function openInvitation() {
     const main = document.querySelector('main');
 
     main.classList.remove('d-none');
+    main.classList.remove('openned');
     onboarding.classList.add('closed');
 
     initAOS();
@@ -62,19 +64,13 @@ function openInvitation() {
 }
 
 function setCountdown() {
-    const targetDate = new Date('2024-07-14');
+    const targetDate = new Date('2025-2-15');
     const currentDate = new Date();
 
     const ms = targetDate - currentDate;
     const days = Math.floor(ms / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((ms % (1000 * 60)) / 1000);
 
-    document.querySelector('.timer.timer-days > .number').textContent = days;
-    document.querySelector('.timer.timer-hours > .number').textContent = hours;
-    document.querySelector('.timer.timer-minutes > .number').textContent = minutes;
-    document.querySelector('.timer.timer-seconds > .number').textContent = seconds;
+    document.querySelector('.timer-days .number').textContent = days;
 }
 
 function copyToClipboard(selector) {
