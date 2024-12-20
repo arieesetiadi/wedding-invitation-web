@@ -11,7 +11,6 @@
         @include('sections.section-rsvp')
         @include('sections.section-gift')
         @include('sections.section-comments')
-        {{-- @include('sections.section-quotes')
-        @include('sections.section-footer') --}}
+        @include('sections.section-footer')
     </main>
 @endsection

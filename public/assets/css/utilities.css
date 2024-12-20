@@ -51,6 +51,10 @@
     font-size: 150px !important;
 }
 
+.fs-128 {
+    font-size: 128px !important;
+}
+
 .fs-96 {
     font-size: 96px !important;
 }
@@ -372,6 +376,10 @@
     /* Width */
     .w-xs-100 {
         width: 100%;
+    }
+
+    .line-height-xs-100 {
+        line-height: 100%;
     }
 }
 
