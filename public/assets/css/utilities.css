@@ -148,6 +148,10 @@
     text-decoration: underline;
 }
 
+.text-italic {
+    font-style: italic;
+}
+
 /* Background Color */
 .bg-primary {
     background-color: var(--color-primary) !important;
@@ -250,12 +254,14 @@
 
 .btn-secondary {
     background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus,
 .btn-secondary:active {
     background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
     filter: brightness(105%);
 }
 

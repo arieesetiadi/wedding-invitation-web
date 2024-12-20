@@ -119,6 +119,20 @@ main.openned #hero .btn-invitation {
     height: 250px;
 }
 
+#rsvp .banner{
+    width: 50%;
+    height: 860px;
+    background-image: url('/assets/images/general/rsvp-banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+#rsvp form input,
+#rsvp form select {
+    border: 1px solid rgba(230, 230, 230, 1);
+}
+
 /* Mobile */
 @media screen and (max-width: 767px) {
 
@@ -161,6 +175,11 @@ main.openned #hero .btn-invitation {
         width: 100%;
         height: 340px;
     }
+
+    #rsvp .banner {
+        width: 100%;
+        height: 500px;
+    }
 }
 
 /* Tablet */
@@ -195,6 +214,11 @@ main.openned #hero .btn-invitation {
     #gallery img.photo-5 {
         width: 100%;
         object-position: center calc(75%);
+    }
+
+    #rsvp .banner {
+        width: 100%;
+        height: 600px;
     }
 }
 
