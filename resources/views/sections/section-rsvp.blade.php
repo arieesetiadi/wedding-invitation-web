@@ -10,7 +10,6 @@
                     <h2 class="text-primary fs-40 fw-700 ff-dancing-script mb-3 text-center">
                         RSVP
                     </h2>
-
                     <span class="d-block text-primary-light ff-fira-sans fs-16 fw-400 text-center">
                         Please RSVP to confirm your attendance at our special day
                     </span>

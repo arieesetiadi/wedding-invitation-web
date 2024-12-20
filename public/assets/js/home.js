@@ -157,6 +157,8 @@ function showPartnerInput(event) {
 }
 
 function fetchRsvps(limit = 5, noIncrement = false) {
+    // Disable temporary
+    return;
     const commentsWrapper = document.querySelector('.comments-wrapper');
     const comments = commentsWrapper.querySelectorAll('.comment-item');
 
