@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
 
 /* Font Family */
 .ff-fira-code {
@@ -18,6 +19,10 @@
 
 .ff-dancing-script {
     font-family: "Dancing Script", serif !important;
+}
+
+.ff-nova-mono {
+    font-family: "Nova Mono", serif;
 }
 
 .ff-inter {
@@ -106,6 +111,10 @@
     font-size: 14px !important;
 }
 
+.fs-13 {
+    font-size: 13px !important;
+}
+
 .fs-12 {
     font-size: 12px !important;
 }
@@ -142,6 +151,7 @@
 /* Text Decoration */
 .text-normal {
     text-decoration: none;
+    text-transform: none !important;
 }
 
 .text-underline {
@@ -248,6 +258,12 @@
     transition: all 150ms ease-in-out;
 }
 
+.btn-sm {
+    padding: 8px 12px;
+    display: flex;
+    gap: 22px;
+}
+
 .btn-pill {
     border-radius: 50px;
 }
@@ -263,6 +279,23 @@
     background-color: var(--color-secondary);
     border-color: var(--color-secondary);
     filter: brightness(105%);
+}
+
+.btn-white {
+    background-color: white;
+    border-color: rgba(230, 230, 230, 1);
+}
+
+.btn-white:hover,
+.btn-white:focus,
+.btn-white:active {
+    background-color: white;
+    border-color: rgba(230, 230, 230, 1);
+    filter: brightness(98%);
+}
+
+.pointer-events-none {
+    pointer-events: none;
 }
 
 @media screen and (max-width: 767px) {

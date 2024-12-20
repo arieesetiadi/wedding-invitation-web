@@ -1,88 +1,75 @@
-<section id="pre-gift" plain></section>
-
-<section id="gift">
-    <div class="header mb-md-5 px-md-5 mb-5 px-4" data-aos="fade-in">
-        <div class="d-flex justify-content-center mb-1">
-            <img width="40" height="40" src="{{ asset('assets/images/icons/feather.png') }}" alt="Feather Icon">
-        </div>
-
-        <h2 class="text-primary fs-48 fs-xs-32 fw-400 ff-italiana mb-3 text-center">
+<section id="gift" class="bg-primary text-white">
+    <div class="header mb-lg-5 mb-5">
+        <h2 class="fs-40 fw-700 ff-dancing-script px-lg-0 mb-4 px-5 text-center">
             Wedding Gift
-        </h2>
-
-        <span class="d-block text-primary-dark ff-times-new-roman fs-20 text-center">
-            Your blessing is a very meaningful gift for us. However, if giving is an expression of your love,
-            you can give cashless gifts.
+    </h2>
+        <span class="sub-title d-block fs-16 fw-400 ff-fira-sans text-center">
+            Your blessing is a very meaningful gift for us. However, if giving is an expression of your love, you can
+            give cashless gifts.
         </span>
     </div>
 
-    <div class="content container-sm px-md-5 px-4">
-        <div class="row">
-            <!-- BCA1 -->
-            <div class="col-12 col-md-6 mb-md-0 mb-4" data-aos="fade-in">
-                <div class="bca1 border-primary rounded-5 overflow-hidden border">
-                    <div class="d-flex justify-content-center border-bottom border-primary p-md-3 p-3">
-                        <img height="24" width="77" src="{{ asset('assets/images/icons/bank-bca.png') }}"
-                            alt="BCA Icon">
-                    </div>
-
-                    <div class="bg-light p-3">
-                        <span id="account-number-bca1"
-                            class="d-block fs-20 fw-500 ff-dm-mono mb-md-2 mb-3 text-center text-black">
-                            7560252808
+    <div class="container">
+        <div class="bank-wrapper">
+            <div class="bank-item rounded-16 mb-5 bg-white">
+                <div class="header mb-3">
+                    <span class="d-inline-block fs-20 fw-600 ff-inter text-black">
+                        Diana Veronica
+                    </span>
+                    <img width="77" height="24" src="{{ asset('assets/images/icons/bank-bca.png') }}"
+                        alt="BCA Icon" class="mb-lg-0 mb-3">
+                </div>
+                <div class="main">
+                    <div>
+                        <span class="d-block fs-32 fw-400 ff-nova-mono mb-3 text-black">
+                            60855685555
                         </span>
-
-                        <span
-                            class="d-block text-primary-dark fs-20 fw-400 ff-times-new-roman mb-md-3 mb-3 text-center">
-                            a.n. Vicky Pradana
-                        </span>
-
-                        <div class="d-flex justify-content-center">
-                            <button onclick="copyToClipboard('#account-number-bca1')" type="button"
-                                class="open btn btn-rounded btn-primary w-xs-100">
-                                <div class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="{{ asset('assets/images/icons/copy-white.svg') }}" alt="Copy Icon">
-                                    <span class="text-uppercase ff-times-new-roman fs-14 fw-400 text-white">
-                                        Copy Account Number
-                                    </span>
-                                </div>
+                        <div class="actions">
+                            <button class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center">
+                                <img class="d-inline-block mx-1 mb-1" width="18" height="18"
+                                    src="{{ asset('assets/images/icons/copy.svg') }}" alt="Copy icon">
+                                <span class="d-inline-block fs-13 ff-inter text-normal mx-1">Copy account number</span>
+                            </button>
+                            <button
+                                class="btn btn-sm btn-copied btn-secondary btn-pill d-block pointer-events-none text-center text-white">
+                                <span class="d-inline-block fs-13 ff-inter text-normal mx-1">Copied!</span>
                             </button>
                         </div>
                     </div>
+
+                    <img width="60" height="60" src="{{ asset('assets/images/icons/bank-dots.svg') }}"
+                        class="dots" alt="Dots icon">
                 </div>
             </div>
 
-            <!-- BCA2 -->
-            <div class="col-12 col-md-6" data-aos="fade-in" data-aos-delay="250">
-                <div class="bca2 border-primary rounded-5 overflow-hidden border">
-                    <div class="d-flex justify-content-center border-bottom border-primary p-md-3 p-3">
-                        <img height="24" width="77" src="{{ asset('assets/images/icons/bank-bca.png') }}"
-                            alt="BCA Icon">
-                    </div>
-
-                    <div class="bg-light p-3">
-                        <span id="account-number-bca2"
-                            class="d-block fs-20 fw-500 ff-dm-mono mb-md-2 mb-3 text-center text-black">
-                            5930566146
+            <div class="bank-item rounded-16 bg-white">
+                <div class="header mb-3">
+                    <span class="d-inline-block fs-20 fw-600 ff-inter text-black">
+                        Billy Gani
+                    </span>
+                    <img width="150" height="24" src="{{ asset('assets/images/icons/bank-cimb-niaga.png') }}"
+                        alt="BCA Icon" class="mb-lg-0 mb-3">
+                </div>
+                <div class="main">
+                    <div>
+                        <span class="d-block fs-32 fw-400 ff-nova-mono mb-3 text-black">
+                            705005654893
                         </span>
-
-                        <span
-                            class="d-block text-primary-dark fs-20 fw-400 ff-times-new-roman mb-md-3 mb-3 text-center">
-                            a.n. Karina Gani
-                        </span>
-
-                        <div class="d-flex justify-content-center">
-                            <button onclick="copyToClipboard('#account-number-bca2')" type="button"
-                                class="open btn btn-rounded btn-primary w-xs-100">
-                                <div class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="{{ asset('assets/images/icons/copy-white.svg') }}" alt="Copy Icon">
-                                    <span class="text-uppercase ff-times-new-roman fs-14 fw-400 text-white">
-                                        Copy Account Number
-                                    </span>
-                                </div>
+                        <div class="actions">
+                            <button class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center">
+                                <img class="d-inline-block mx-1 mb-1" width="18" height="18"
+                                    src="{{ asset('assets/images/icons/copy.svg') }}" alt="Copy icon">
+                                <span class="d-inline-block fs-13 ff-inter text-normal mx-1">Copy account number</span>
+                            </button>
+                            <button
+                                class="btn btn-sm btn-copied btn-secondary btn-pill d-block pointer-events-none text-center text-white">
+                                <span class="d-inline-block fs-13 ff-inter text-normal mx-1">Copied!</span>
                             </button>
                         </div>
                     </div>
+
+                    <img width="60" height="60" src="{{ asset('assets/images/icons/bank-dots.svg') }}"
+                        class="dots" alt="Dots icon">
                 </div>
             </div>
         </div>
