@@ -10,9 +10,10 @@
             <!-- Male -->
             <div class="col-12 col-lg-5">
                 <div class="d-flex justify-content-center mb-5">
-                    <img width="250" height="250" 
-                        src="{{ asset('assets/images/general/male.png') }}" 
-                        alt="Photo of Billy Gani">
+                    <img loading="lazy" width="250" height="250" 
+                        src="{{ asset('assets/images/general/male.webp') }}" 
+                        alt="Photo of Billy Gani"
+                        class="rounded-circle">
                 </div>
                 <h3 class="text-center fw-32 fw-700 ff-dancing-script mb-3">Billy Gani</h3>
                 <span class="d-block text-center text-primary-light fs-16 fw-400 ff-fira-sans mb-3">
@@ -39,9 +40,10 @@
             <!-- Female -->
             <div class="col-12 col-lg-5">
                 <div class="d-flex justify-content-center mb-5">
-                    <img width="250" height="250" 
-                        src="{{ asset('assets/images/general/female.png') }}" 
-                        alt="Photo of Billy Gani">
+                    <img loading="lazy" width="250" height="250" 
+                        src="{{ asset('assets/images/general/female.webp') }}" 
+                        alt="Photo of Billy Gani" 
+                        class="rounded-circle">
                 </div>
                 <h3 class="text-center fw-32 fw-700 ff-dancing-script mb-3">Diana Veronica</h3>
                 <span class="d-block text-center text-primary-light fs-16 fw-400 ff-fira-sans mb-3">

@@ -220,6 +220,10 @@
     border-radius: 40px !important;
 }
 
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
 .h-screen {
     height: 100vh;
 }

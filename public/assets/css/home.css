@@ -3,7 +3,7 @@ main.openned #hero .btn-invitation {
 }
 
 #hero .left {
-    background-image: url('/assets/images/general/hero-secondary.jpg');
+    background-image: url('/assets/images/general/hero-secondary.webp');
     background-position: center calc(75%);
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,15 +11,15 @@ main.openned #hero .btn-invitation {
     position: relative;
 }
 
-/* #hero .left::before {
+#hero .left::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(119, 123, 98, 0.8);
-} */
+    background-color: rgba(63, 65, 52, 0.8)
+}
 
 #hero .left .content {
     display: flex;
@@ -48,7 +48,7 @@ main.openned #hero .btn-invitation {
 
 #hero .right {
     display: none;
-    background-image: url('/assets/images/general/hero-primary.jpg');
+    background-image: url('/assets/images/general/hero-primary.webp');
     background-position: center calc(78%);
     background-repeat: no-repeat;
     background-size: cover;
@@ -108,7 +108,7 @@ main.openned #hero .btn-invitation {
 .maps-banner {
     width: 100vw;
     height: 480px;
-    background-image: url('/assets/images/general/address-banner.png');
+    background-image: url('/assets/images/general/address-banner.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -122,10 +122,10 @@ main.openned #hero .btn-invitation {
 #rsvp .banner {
     width: 50%;
     height: 860px;
-    background-image: url('/assets/images/general/rsvp-banner.png');
+    background-image: url('/assets/images/general/rsvp-banner.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
+    background-position: center calc(65%);
 }
 
 #rsvp form input,
@@ -185,17 +185,18 @@ main.openned #hero .btn-invitation {
 }
 
 #footer {
+    position: relative;
     display: flex;
     justify-content: end;
     width: 100vw;
     height: 100vh;
-    background-image: url('/assets/images/general/footer.png');
+    background-image: url('/assets/images/general/footer.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
 }
 
-/* #footer::before {
+#footer::before {
     content: '';
     position: absolute;
     top: 0;
@@ -203,7 +204,7 @@ main.openned #hero .btn-invitation {
     left: 0;
     right: 0;
     background: rgba(63, 65, 52, 0.4);
-} */
+}
 
 #footer .content {
     display: flex;
@@ -274,6 +275,7 @@ main.openned #hero .btn-invitation {
     #rsvp .banner {
         width: 100%;
         height: 500px;
+        background-position: bottom;
     }
 
     #gift .bank-item {
@@ -298,6 +300,10 @@ main.openned #hero .btn-invitation {
 
     #gift .bank-item .header img {
         order: 1;
+    }
+
+    #comments {
+        height: unset;
     }
 
     #comments .right {
@@ -365,6 +371,11 @@ main.openned #hero .btn-invitation {
     #rsvp .banner {
         width: 100%;
         height: 600px;
+        background-position: bottom;
+    }
+
+    #comments {
+        height: unset;
     }
 
     #comments .right {
