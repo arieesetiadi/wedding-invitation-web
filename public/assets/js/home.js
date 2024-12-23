@@ -1,7 +1,5 @@
 const backsound = new Audio('assets/audios/backsound.mp3');
-const backsoundToggler = document.querySelector('#btn-backsound-toggler');
 const loading = document.querySelector('#loading');
-const floatingButtons = document.querySelector('.floating-buttons');
 
 const csrf = document.querySelector('meta[name=csrf]').getAttribute('content');
 const baseUrl = document.querySelector('meta[name=url]').getAttribute('content');
@@ -32,16 +30,6 @@ window.addEventListener('load', function () {
     }, 500);
 });
 
-window.addEventListener('scroll', function () {
-    if (this.window.scrollY >= 300) {
-        floatingButtons.style.opacity = 1;
-    }
-    // 
-    else {
-        floatingButtons.style.opacity = 0;
-    }
-});
-
 function initAOS() {
     AOS.init({
         offset: 120,
@@ -56,7 +44,7 @@ function openInvitation() {
     const main = document.querySelector('main');
 
     main.classList.remove('d-none');
-    main.classList.remove('openned');
+    main.classList.add('openned');
     onboarding.classList.add('closed');
 
     initAOS();
@@ -103,14 +91,10 @@ function toggleBacksound() {
 
 function playBacksound() {
     backsound.play();
-    backsoundToggler.querySelector('.up').classList.remove('d-none');
-    backsoundToggler.querySelector('.mute').classList.add('d-none');
 }
 
 function pauseBacksound() {
     backsound.pause();
-    backsoundToggler.querySelector('.mute').classList.remove('d-none');
-    backsoundToggler.querySelector('.up').classList.add('d-none');
 }
 
 function scrollToTop() {

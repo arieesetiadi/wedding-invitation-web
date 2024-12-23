@@ -1,8 +1,11 @@
 @extends('layouts.layout-main')
 
 @section('content')
-    {{-- <main class="d-none"> --}}
-    <main>
+    <div class="onboarding">
+        @include('sections.section-hero')
+    </div>
+    
+    <main class="d-none">
         @include('sections.section-hero')
         @include('sections.section-about')
         @include('sections.section-gallery')
