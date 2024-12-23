@@ -61,9 +61,13 @@ function setCountdown() {
     document.querySelector('.timer-days .number').textContent = days;
 }
 
-function copyToClipboard(selector) {
+function copyToClipboard(event, selector) {
     const text = document.querySelector(selector);
     const textarea = document.createElement("textarea");
+    const btnCopy = event.target;
+    const alertCopied = btnCopy
+        .parentElement
+        .querySelector('.btn-copied');
 
     textarea.value = text.innerText;
 
@@ -73,7 +77,10 @@ function copyToClipboard(selector) {
     textarea.setSelectionRange(0, 99999);
 
     navigator.clipboard.writeText(textarea.value).then(function () {
-        toastSuccess('Copied!');
+        alertCopied.classList.remove('hidden');
+        setTimeout(() => {
+            alertCopied.classList.add('hidden');
+        }, 2000);
     }, function (err) {
         console.error(err);
     });

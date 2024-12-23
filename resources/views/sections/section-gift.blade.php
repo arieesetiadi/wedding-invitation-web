@@ -21,17 +21,17 @@
                 </div>
                 <div class="main">
                     <div>
-                        <span class="d-block fs-32 fw-400 ff-nova-mono mb-3 text-black">
+                        <span id="account-number-bca" class="d-block fs-32 fw-400 ff-nova-mono mb-3 text-black">
                             60855685555
                         </span>
                         <div class="actions">
-                            <button class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center">
-                                <img class="d-inline-block mx-1 mb-1" width="18" height="18"
+                            <button onclick="copyToClipboard(event, '#account-number-bca')" class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center">
+                                <img class="d-inline-block pointer-events-none mx-1 mb-1" width="18" height="18"
                                     src="{{ asset('assets/images/icons/copy.svg') }}" alt="Copy icon">
-                                <span class="d-inline-block fs-13 ff-inter text-normal mx-1">Copy account number</span>
+                                <span class="d-inline-block pointer-events-none fs-13 ff-inter text-normal mx-1">Copy account number</span>
                             </button>
                             <button
-                                class="btn btn-sm btn-copied btn-secondary btn-pill d-block pointer-events-none text-center text-white">
+                                class="btn btn-sm btn-copied btn-secondary hidden btn-pill d-block pointer-events-none text-center text-white">
                                 <span class="d-inline-block fs-13 ff-inter text-normal mx-1">Copied!</span>
                             </button>
                         </div>
@@ -52,17 +52,17 @@
                 </div>
                 <div class="main">
                     <div>
-                        <span class="d-block fs-32 fw-400 ff-nova-mono mb-3 text-black">
+                        <span id="account-number-cimb" class="d-block fs-32 fw-400 ff-nova-mono mb-3 text-black">
                             705005654893
                         </span>
                         <div class="actions">
-                            <button class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center">
-                                <img class="d-inline-block mx-1 mb-1" width="18" height="18"
+                            <button onclick="copyToClipboard(event, '#account-number-cimb')" class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center">
+                                <img class="d-inline-block pointer-events-none mx-1 mb-1" width="18" height="18"
                                     src="{{ asset('assets/images/icons/copy.svg') }}" alt="Copy icon">
-                                <span class="d-inline-block fs-13 ff-inter text-normal mx-1">Copy account number</span>
+                                <span class="d-inline-block pointer-events-none fs-13 ff-inter text-normal mx-1">Copy account number</span>
                             </button>
                             <button
-                                class="btn btn-sm btn-copied btn-secondary btn-pill d-block pointer-events-none text-center text-white">
+                                class="btn btn-sm btn-copied btn-secondary hidden btn-pill d-block pointer-events-none text-center text-white">
                                 <span class="d-inline-block fs-13 ff-inter text-normal mx-1">Copied!</span>
                             </button>
                         </div>
