@@ -1,8 +1,8 @@
-<section id="gift" class="bg-primary text-white">
+<section id="gift" class="bg-primary text-white" data-aos="fade-in">
     <div class="header mb-lg-5 mb-5">
         <h2 class="fs-40 fw-700 ff-dancing-script px-lg-0 mb-4 px-5 text-center">
             Wedding Gift
-    </h2>
+        </h2>
         <span class="sub-title d-block fs-16 fw-400 ff-fira-sans text-center">
             Your blessing is a very meaningful gift for us. However, if giving is an expression of your love, you can
             give cashless gifts.

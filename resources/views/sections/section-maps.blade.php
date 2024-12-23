@@ -1,5 +1,5 @@
-<div class="maps-banner"></div>
-<section id="maps" class="bg-primary text-white">
+<div class="maps-banner" data-aos="fade-in"></div>
+<section id="maps" class="bg-primary text-white" data-aos="fade-in">
     <div class="header mb-lg-5 mb-5">
         <h2 class="fs-40 fw-700 ff-dancing-script px-lg-0 px-5 text-center">
             Seated Wedding Dinner

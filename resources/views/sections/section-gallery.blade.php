@@ -1,4 +1,4 @@
-<section id="gallery" class="bg-secondary-light">
+<section id="gallery" class="bg-secondary-light" data-aos="fade-in">
     <div class="header mb-lg-5 mb-5">
         <h2 class="text-primary fs-40 fw-700 ff-dancing-script px-lg-0 px-5 text-center">
             Moments

@@ -1,5 +1,5 @@
 @if ($invitation || true)
-    <section id="rsvp" plain>
+    <section id="rsvp" plain data-aos="fade-in">
         <div class="row">
             <div class="col-12 col-lg-6 bg-secondary-light py-5">
                 <div class="header mb-md-5 px-md-5 mb-5 px-4">

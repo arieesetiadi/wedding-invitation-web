@@ -1,4 +1,4 @@
-<section id="footer">
+<section id="footer" data-aos="fade-in">
     <div class="content text-white">
         <div class="main px-lg-5 px-1">
             <h2 class="fs-128 fs-xs-96 fw-400 ff-dancing-script mb-3 text-center line-height-xs-100">Thank You</h2>

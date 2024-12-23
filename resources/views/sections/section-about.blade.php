@@ -1,4 +1,4 @@
-<section id="about" class="bg-secondary-light">
+<section id="about" class="bg-secondary-light" data-aos="fade-in">
     <div class="header mb-lg-5 mb-5">
         <h2 class="text-primary fs-40 fw-700 ff-dancing-script text-center px-5 px-lg-0">
             Meet the Happy Couple

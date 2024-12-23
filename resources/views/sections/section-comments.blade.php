@@ -1,4 +1,4 @@
-<section id="comments" plain>
+<section id="comments" plain data-aos="fade-in">
     <div class="row h-100">
         <div class="left col-12 col-lg-6 bg-secondary-light py-5">
             <div class="header mb-md-5 px-md-5 mb-5 px-4">
