@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('guest3name', 64)->nullable();
             $table->string('guest4name', 64)->nullable();
             $table->string('guest5name', 64)->nullable();
-            $table->text('greetings');
+            $table->text('greetings')->nullable();
             $table->timestamp('create_date');
         });
     }

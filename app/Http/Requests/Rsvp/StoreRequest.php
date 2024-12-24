@@ -28,7 +28,6 @@ class StoreRequest extends FormRequest
             'phone' => ['required', 'string', 'max:20'],
             'attendance' => ['required', 'boolean'],
             'num_guest' => ['nullable', 'numeric', 'min:1', 'max:5'],
-            'greetings' => ['required', 'string'],
             'guest2name' => ['nullable', 'string', 'max:64'],
             'guest3name' => ['nullable', 'string', 'max:64'],
             'guest4name' => ['nullable', 'string', 'max:64'],

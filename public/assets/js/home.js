@@ -4,6 +4,8 @@ const loading = document.querySelector('#loading');
 const csrf = document.querySelector('meta[name=csrf]').getAttribute('content');
 const baseUrl = document.querySelector('meta[name=url]').getAttribute('content');
 
+let currentRsvpPage = 1;
+
 document.addEventListener('DOMContentLoaded', function () {
     new Swiper(".swiper-gallery", {
         spaceBetween: 20,
@@ -48,17 +50,17 @@ function openInvitation() {
     onboarding.classList.add('closed');
 
     initAOS();
-    playBacksound();
+    backsound.play();
 }
 
 function setCountdown() {
-    const targetDate = new Date('2025-2-15');
-    const currentDate = new Date();
+    // const targetDate = new Date('2025-2-15');
+    // const currentDate = new Date();
 
-    const ms = targetDate - currentDate;
-    const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+    // const ms = targetDate - currentDate;
+    // const days = Math.floor(ms / (1000 * 60 * 60 * 24));
 
-    document.querySelector('.timer-days .number').textContent = days;
+    // document.querySelector('.timer-days .number').textContent = days;
 }
 
 function copyToClipboard(event, selector) {
@@ -90,22 +92,10 @@ function copyToClipboard(event, selector) {
 
 function toggleBacksound() {
     if (backsound.paused) {
-        playBacksound();
+        backsound.play();
     } else {
-        pauseBacksound();
+        backsound.pause();
     }
-}
-
-function playBacksound() {
-    backsound.play();
-}
-
-function pauseBacksound() {
-    backsound.pause();
-}
-
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function toggleGuestCount(event) {
@@ -137,7 +127,8 @@ function showPartnerInput(event) {
 
             div.innerHTML = `
                 <div class="input-group mb-3">
-                    <input name="guest${i}name" type="text" class="form-control"
+                    <input name="guest${i}name" type="text"
+                        class="form-control text-italic fs-16 fw-400 ff-fira-sans"
                         placeholder="Your partner's name" aria-label="Partner's Name" required>
                 </div>
             `;
@@ -147,53 +138,46 @@ function showPartnerInput(event) {
     }
 }
 
-function fetchRsvps(limit = 5, noIncrement = false) {
-    // Disable temporary
-    return;
+function fetchRsvps(page = currentRsvpPage, perPage = 5) {
     const commentsWrapper = document.querySelector('.comments-wrapper');
     const comments = commentsWrapper.querySelectorAll('.comment-item');
 
-    let count = limit;
-
-    if (noIncrement && comments.length <= limit) {
-        count = limit;
-    } else if (noIncrement) {
-        count = comments.length;
-    } else {
-        count = comments.length + limit;
-    }
-
-    fetch(`${baseUrl}/rsvps/${count}`)
+    fetch(`${baseUrl}/rsvps?page=${page}&perPage=${perPage}`)
         .then((response) => response.json())
-        .then(({ rsvps }) => {
+        .then(({ rsvps, remaining }) => {
+            // if (page <= 1) {
+            //     document.querySelector('.btn-rsvp-prev').disabled = true;
+            // } else {
+            //     document.querySelector('.btn-rsvp-prev').disabled = false;
+            // }
+
+            // if (!remaining) {
+            //     document.querySelector('.btn-rsvp-next').disabled = true;
+            // } else {
+            //     document.querySelector('.btn-rsvp-next').disabled = false;
+            // }
+
+            if (rsvps.length == 0) {
+                return;
+            }
+
             comments.forEach(comment => comment.remove());
 
-            [...rsvps].forEach((rsvp) => {
+            [...rsvps].forEach((rsvp, i) => {
                 const div = document.createElement('div');
+                const isLastItem = (i + 1) == rsvps.length;
 
                 div.innerHTML = `
-                    <div class="comment-item col-12 border-bottom border-danger py-3">
-                        <div class="d-flex align-items-center mb-2 gap-3">
-                            <span class="text-primary text-uppercase fs-16 fw-700 ff-times-new-roman">
-                                ${rsvp['full_name']}
-                            </span>
-
-                            <div class="bg-secondary d-flex rounded-pill align-items-center gap-1 px-2 py-1">
-                                <img width="14" height="14"src="${baseUrl}/assets/images/icons/${!!rsvp['attendance'] ? 'check-primary.svg' : 'times-primary.svg'}">
-                                <span class="fs-14 fs-xs-12 text-primary ff-times-new-roman">
-                                    ${!!rsvp['attendance'] ? 'Will Attend' : 'Will Not Attend'} 
-                                </span>
-                            </div>
-                        </div>
-
-                        <p class="text-primary-dark fs-16 fw-400 ff-times-new-roman mb-2">
+                    <div class="comment-item rounded-8 ${!isLastItem ? 'mb-3' : ''} bg-white p-4">
+                        <span class="d-block fs-16 fw-500 ff-fira-sans mb-2 text-black">
+                            ${rsvp['full_name']}
+                        </span>
+                        <p class="text-primary-light fs-16 fw-400 ff-fira-sans m-0 mb-2 p-0">
                             ${rsvp['greetings_escaped']}
                         </p>
-
                         <div class="d-flex gap-2">
-                            <img src="${baseUrl}/assets/images/icons/clock-primary-dark.svg" alt="Clock Icon">
-
-                            <span class="fs-14 fs-xs-12 text-primary-dark ff-times-new-roman">
+                            <img src="${baseUrl}/assets/images/icons/clock-primary-light.svg" alt="Clock icon">
+                            <span class="d-inline-block text-primary-lightest fs-13 fw-400 ff-fira-sans">
                                 ${rsvp['create_date_diff']}
                             </span>
                         </div>
@@ -202,10 +186,23 @@ function fetchRsvps(limit = 5, noIncrement = false) {
 
                 commentsWrapper.appendChild(div.firstElementChild);
             });
+
+            currentRsvpPage = page;
         })
         .catch((err) => {
             console.error(err);
         });
+}
+
+function fetchPrevRsvps() {
+    if (currentRsvpPage == 1) {
+        return;
+    }
+    fetchRsvps(currentRsvpPage - 1);
+}
+
+function fetchNextRsvps() {
+    fetchRsvps(currentRsvpPage + 1);
 }
 
 function storeRsvp(event) {
@@ -231,12 +228,48 @@ function storeRsvp(event) {
                 form.reset();
 
                 document
+                    .querySelector('.guest-count-wrapper select')
+                    .value = '';
+
+                document
                     .querySelectorAll('.partner-name-wrapper .input-group')
                     .forEach(inputGroup => inputGroup.remove());
 
-                fetchRsvps(5, true);
-
                 toastSuccess('Thank you for your confirmation and blessing!');
+            })
+            .catch((err) => {
+                console.error(err);
+            })
+            .finally(() => {
+                btnSubmit.removeAttribute('disabled');
+            });
+    });
+}
+
+function updateRsvp(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const btnSubmit = form.querySelector('button[type=submit]');
+    const invitationId = formData.get('invitation_id');
+
+    validateRsvpWishes(invitationId, function () {
+        btnSubmit.setAttribute('disabled', true);
+
+        fetch(`${baseUrl}/rsvps/${invitationId}`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'X-CSRF-TOKEN': csrf,
+            },
+            body: formData,
+        })
+            .then((response) => response.json())
+            .then(() => {
+                form.reset();
+                fetchRsvps(1);
+                toastSuccess('Thank you for your lovely wishes!');
             })
             .catch((err) => {
                 console.error(err);
@@ -253,6 +286,22 @@ function validateRsvp(invitationId, callbackFunction) {
         .then(({ exists }) => {
             if (exists) {
                 toastWarning('You already submitted an RSVP.');
+                return;
+            }
+
+            callbackFunction();
+        })
+        .catch((err) => {
+            console.error(err);
+        });
+}
+
+function validateRsvpWishes(invitationId, callbackFunction) {
+    fetch(`${baseUrl}/rsvps/check/${invitationId}/wishes`)
+        .then((response) => response.json())
+        .then(({ exists }) => {
+            if (exists) {
+                toastWarning('You already submitted a wishes message.');
                 return;
             }
 

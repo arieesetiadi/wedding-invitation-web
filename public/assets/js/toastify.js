@@ -6,6 +6,9 @@ function toastSuccess(text) {
         gravity: "top",
         position: "center",
         className: "rounded-5",
+        style: {
+            background: "linear-gradient(to right, #777B62, #CEAE6F)",
+        },
     }).showToast();
 }
 

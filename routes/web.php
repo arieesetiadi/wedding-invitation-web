@@ -18,8 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/rsvps/{limit}', [RsvpController::class, 'index']);
+Route::get('/rsvps', [RsvpController::class, 'index']);
 Route::get('/rsvps/check/{invitationId}', [RsvpController::class, 'check']);
+Route::get('/rsvps/check/{invitationId}/wishes', [RsvpController::class, 'checkWishes']);
 Route::post('/rsvps', [RsvpController::class, 'store']);
+Route::post('/rsvps/{invitationId}', [RsvpController::class, 'update']);
 
 Route::get('/invitations/generate', [InvitationController::class, 'generate']);

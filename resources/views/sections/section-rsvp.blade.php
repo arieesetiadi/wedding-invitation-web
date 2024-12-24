@@ -1,4 +1,4 @@
-@if ($invitation || true)
+@if ($invitation)
     <section id="rsvp" plain data-aos="fade-in">
         <div class="row">
             <div class="col-12 col-lg-6 bg-secondary-light py-5">
@@ -17,13 +17,13 @@
 
                 <div class="px-md-5 px-lg-5 px-4">
                     <form onsubmit="storeRsvp(event)" class="w-100 px-md-5 px-lg-5 px-0">
-                        <input type="hidden" name="invitation_id" value="">
+                        <input type="hidden" name="invitation_id" value="{{ $invitation->invitation_id ?? null }}">
 
                         <!-- Input Full Name -->
                         <div class="input-group mb-3">
                             <input name="full_name" type="text"
                                 class="form-control text-italic fs-16 fw-400 ff-fira-sans" placeholder="Enter full name"
-                                aria-label="Full name" value="" required>
+                                aria-label="Full name" value="{{ $invitation->guest_name ?? '' }}" readonly required>
                         </div>
 
                         <!-- Input Phone -->
@@ -49,19 +49,28 @@
                             <select onchange="showPartnerInput(event)" name="num_guest"
                                 class="form-select text-italic fs-16 fw-400 ff-fira-sans" aria-label="Number Of Guest">
                                 <option selected value="">Number Of Guest</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
+                                
+                                @foreach (range(1, 5) as $i)
+                                    @if ($invitation->num_guest >= $i)
+                                        <option value="{{ $i }}" @selected(isset($invitation) && $invitation->num_guest == $i)>
+                                            {{ $i }} PAX
+                                        </option>
+                                    @endif
+                                @endforeach
                             </select>
                         </div>
 
                         <!-- Input Partner's Name -->
                         <div class="partner-name-wrapper">
-                            <div class="input-group mb-3">
-                                <input name="guest-1-name" type="text"
-                                    class="form-control text-italic fs-16 fw-400 ff-fira-sans"
-                                    placeholder="Your partner's name" aria-label="Partner's Name" required>
-                            </div>
+                            @if ($invitation && $invitation->num_guest ?? 0 >= 2)
+                                @for ($i = 2; $i <= $invitation->num_guest; $i++)
+                                    <div class="input-group mb-3">
+                                        <input name="guest{{ $i }}name" type="text"
+                                            class="form-control text-italic fs-16 fw-400 ff-fira-sans"
+                                            placeholder="Your partner's name" aria-label="Partner's Name" required>
+                                    </div>
+                                @endfor
+                            @endif
                         </div>
 
                         <div class="d-flex justify-content-center">
