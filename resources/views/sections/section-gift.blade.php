@@ -1,5 +1,5 @@
-<section id="gift" class="bg-primary text-white" data-aos="fade-in">
-    <div class="header mb-lg-5 mb-5">
+<section id="gift" class="bg-primary text-white">
+    <div class="header mb-lg-5 mb-5" data-aos="fade-in">
         <h2 class="fs-40 fw-700 ff-dancing-script px-lg-0 mb-4 px-5 text-center">
             Wedding Gift
         </h2>
@@ -9,7 +9,7 @@
         </span>
     </div>
 
-    <div class="container">
+    <div class="container" data-aos="fade-in">
         <div class="bank-wrapper">
             <div class="bank-item rounded-16 mb-5 bg-white">
                 <div class="header mb-3">

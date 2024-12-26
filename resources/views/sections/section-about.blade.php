@@ -1,11 +1,11 @@
-<section id="about" class="bg-secondary-light" data-aos="fade-in">
-    <div class="header mb-lg-5 mb-5">
+<section id="about" class="bg-secondary-light">
+    <div class="header mb-lg-5 mb-5" data-aos="fade-in">
         <h2 class="text-primary fs-40 fw-700 ff-dancing-script text-center px-5 px-lg-0">
             Meet the Happy Couple
         </h2>
     </div>
 
-    <div class="content container py-4">
+    <div class="content container py-4" data-aos="fade-in">
         <div class="row pt-0 pt-lg-3">
             <!-- Male -->
             <div class="col-12 col-lg-5">

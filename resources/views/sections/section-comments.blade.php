@@ -2,7 +2,7 @@
     <div class="row h-100">
         <div
             class="left col-12 col-lg-6 bg-secondary-light {{ !$invitation ? 'd-flex align-items-center justify-content-center' : '' }} py-5">
-            <div class="header mb-md-5 px-md-5 mb-5 px-4">
+            <div class="header mb-md-5 px-md-5 mb-5 px-4" data-aos="fade-in">
                 <div class="d-flex justify-content-center mb-4">
                     <img width="100" height="70" src="{{ asset('assets/images/icons/flower.svg') }}"
                         alt="Flower Icon">
@@ -16,7 +16,7 @@
             </div>
 
             @if ($invitation)
-                <div class="px-md-5 px-lg-5 px-4">
+                <div class="px-md-5 px-lg-5 px-4" data-aos="fade-in">
                     <form onsubmit="updateRsvp(event)" class="w-100 px-md-5 px-lg-5 px-0">
                         <input type="hidden" name="invitation_id" value="{{ $invitation->invitation_id ?? null }}">
 
@@ -52,7 +52,7 @@
                 </button>
             </div> --}}
 
-            <div class="comments-wrapper w-100 h-100">
+            <div class="comments-wrapper w-100 h-100" data-aos="fade-in">
                 {{-- Rsvps fetched from home.js --}}
             </div>
         </div>

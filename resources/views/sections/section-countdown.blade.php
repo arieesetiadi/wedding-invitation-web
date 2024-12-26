@@ -1,11 +1,11 @@
-<section id="countdown" class="bg-light" data-aos="fade-in">
-    <div class="header mb-5">
+<section id="countdown" class="bg-light">
+    <div class="header mb-5" data-aos="fade-in">
         <h2 class="text-primary fs-40 fw-700 ff-dancing-script px-lg-0 px-5 text-center">
             You're Invited
         </h2>
     </div>
 
-    <div class="content container">
+    <div class="content container" data-aos="fade-in">
         <div class="d-flex justify-content-center mb-3">
             <img width="18" height="18" src="{{ asset('assets/images/icons/calendar-black.svg') }}"
                 alt="Calendar icon">

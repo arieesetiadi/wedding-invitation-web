@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     setCountdown();
+    
     setInterval(() => {
         setCountdown();
     }, 1000 * 60 * 60);
@@ -54,13 +55,13 @@ function openInvitation() {
 }
 
 function setCountdown() {
-    // const targetDate = new Date('2025-2-15');
-    // const currentDate = new Date();
+    const targetDate = new Date('2025-2-15');
+    const currentDate = new Date();
 
-    // const ms = targetDate - currentDate;
-    // const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+    const ms = targetDate - currentDate;
+    const days = Math.floor(ms / (1000 * 60 * 60 * 24));
 
-    // document.querySelector('.timer-days .number').textContent = days;
+    document.querySelector('.timer-days .number').textContent = days;
 }
 
 function copyToClipboard(event, selector) {
@@ -88,14 +89,6 @@ function copyToClipboard(event, selector) {
     });
 
     document.body.removeChild(textarea);
-}
-
-function toggleBacksound() {
-    if (backsound.paused) {
-        backsound.play();
-    } else {
-        backsound.pause();
-    }
 }
 
 function toggleGuestCount(event) {

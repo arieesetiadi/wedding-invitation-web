@@ -1,12 +1,12 @@
 <div class="maps-banner" data-aos="fade-in"></div>
-<section id="maps" class="bg-primary text-white" data-aos="fade-in">
-    <div class="header mb-lg-5 mb-5">
+<section id="maps" class="bg-primary text-white">
+    <div class="header mb-lg-5 mb-5" data-aos="fade-in">
         <h2 class="fs-40 fw-700 ff-dancing-script px-lg-0 px-5 text-center">
             Seated Wedding Dinner
         </h2>
     </div>
 
-    <div class="container">
+    <div class="container" data-aos="fade-in">
         <div class="mb-4">
             <span class="d-block fs-20 fw-400 ff-fira-sans mb-1 text-center">
                 Saturday, February 15th 2025

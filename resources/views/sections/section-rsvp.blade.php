@@ -1,8 +1,8 @@
 @if ($invitation)
-    <section id="rsvp" plain data-aos="fade-in">
+    <section id="rsvp" plain>
         <div class="row">
             <div class="col-12 col-lg-6 bg-secondary-light py-5">
-                <div class="header mb-md-5 px-md-5 mb-5 px-4">
+                <div class="header mb-md-5 px-md-5 mb-5 px-4" data-aos="fade-in">
                     <div class="d-flex justify-content-center mb-4">
                         <img width="100" height="70" src="{{ asset('assets/images/icons/flower.svg') }}"
                             alt="Flower Icon">
@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="px-md-5 px-lg-5 px-4">
-                    <form onsubmit="storeRsvp(event)" class="w-100 px-md-5 px-lg-5 px-0">
+                    <form onsubmit="storeRsvp(event)" class="w-100 px-md-5 px-lg-5 px-0" data-aos="fade-in">
                         <input type="hidden" name="invitation_id" value="{{ $invitation->invitation_id ?? null }}">
 
                         <!-- Input Full Name -->

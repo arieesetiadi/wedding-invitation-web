@@ -1,11 +1,11 @@
-<section id="gallery" class="bg-secondary-light" data-aos="fade-in">
-    <div class="header mb-lg-5 mb-5">
+<section id="gallery" class="bg-secondary-light">
+    <div class="header mb-lg-5 mb-5" data-aos="fade-in">
         <h2 class="text-primary fs-40 fw-700 ff-dancing-script px-lg-0 px-5 text-center">
             Moments
         </h2>
     </div>
 
-    <div class="content container py-4">
+    <div class="content container py-4" data-aos="fade-in">
         <div class="swiper swiper-gallery">
             <div class="swiper-wrapper">
                 <div class="swiper-slide rounded-16 overflow-hidden">
