@@ -21,10 +21,10 @@
                     Mr. Kusnan Gani & Mrs. Anna Susanna Komariah
                 </span>
                 <div class="d-flex justify-content-center">
-                    <a target="_blank" href="#" class="d-inline-block text-normal">
+                    <a target="_blank" href="https://www.instagram.com/billygani01" class="d-inline-block text-normal">
                         <img src="{{ asset('assets/images/icons/instagram-primary-light.svg') }}" alt="Instagram icon">
                         <span class="text-underline text-primary-light ff-fira-sans">
-                            @username
+                            @billygani01
                         </span>
                     </a>
                 </div>
@@ -51,10 +51,10 @@
                     Mr. Ong Tiam Beng & Mrs. Carolina Antika ✞                    
                 </span>
                 <div class="d-flex justify-content-center">
-                    <a target="_blank" href="#" class="d-inline-block text-normal">
+                    <a target="_blank" href="https://www.instagram.com/dianaveronw" class="d-inline-block text-normal">
                         <img src="{{ asset('assets/images/icons/instagram-primary-light.svg') }}" alt="Instagram icon">
                         <span class="text-underline text-primary-light ff-fira-sans">
-                            @username
+                            @dianaveronw
                         </span>
                     </a>
                 </div>
