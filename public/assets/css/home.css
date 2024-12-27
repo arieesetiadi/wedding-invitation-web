@@ -217,13 +217,36 @@ main.openned #hero .btn-invitation {
 
 #comments .right {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 0 5.5rem !important;
+    padding: 1.5rem 5.5rem !important;
 }
 
 #comments .right .comments-wrapper {
-    height: 80vh !important;
+    height: 83vh !important;
     overflow-y: scroll;
+}
+
+#comments .btn-rsvp-prev,
+#comments .btn-rsvp-next {
+    user-select: none;
+    color: var(--color-secondary);
+}
+
+#comments .btn-rsvp-prev .icon,
+#comments .btn-rsvp-next .icon {
+    color: var(--color-primary);
+}
+
+#comments .btn-rsvp-prev.disabled,
+#comments .btn-rsvp-next.disabled {
+    color: #BFBFBF;
+    pointer-events: none;
+}
+
+#comments .btn-rsvp-prev.disabled *,
+#comments .btn-rsvp-next.disabled * {
+    color: #BFBFBF;
 }
 
 #footer {

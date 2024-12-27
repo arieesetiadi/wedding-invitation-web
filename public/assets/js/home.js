@@ -150,17 +150,28 @@ function fetchRsvps(page = currentRsvpPage, perPage = 5) {
     fetch(`${baseUrl}/rsvps?page=${page}&perPage=${perPage}`)
         .then((response) => response.json())
         .then(({ rsvps, remaining }) => {
-            // if (page <= 1) {
-            //     document.querySelector('.btn-rsvp-prev').disabled = true;
-            // } else {
-            //     document.querySelector('.btn-rsvp-prev').disabled = false;
-            // }
+            if (!rsvps.length) {
+                document.querySelector('.comments-wrapper').classList.add('d-none');
+                document.querySelector('.comments-actions').classList.add('d-none');
+                document.querySelector('.comments-empty-placeholder').classList.remove('d-none');
+                return;
+            } else {
+                document.querySelector('.comments-wrapper').classList.remove('d-none');
+                document.querySelector('.comments-actions').classList.remove('d-none');
+                document.querySelector('.comments-empty-placeholder').classList.add('d-none');
+            }
 
-            // if (!remaining) {
-            //     document.querySelector('.btn-rsvp-next').disabled = true;
-            // } else {
-            //     document.querySelector('.btn-rsvp-next').disabled = false;
-            // }
+            if (page <= 1) {
+                document.querySelector('.btn-rsvp-prev').classList.add('disabled');
+            } else {
+                document.querySelector('.btn-rsvp-prev').classList.remove('disabled');
+            }
+
+            if (!remaining) {
+                document.querySelector('.btn-rsvp-next').classList.add('disabled');
+            } else {
+                document.querySelector('.btn-rsvp-next').classList.remove('disabled');
+            }
 
             if (rsvps.length == 0) {
                 return;
