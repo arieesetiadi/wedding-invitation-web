@@ -1,5 +1,7 @@
 const backsound = new Audio('assets/audios/backsound.mp3');
 const loading = document.querySelector('#loading');
+const floatingButtons = document.querySelector('.floating-buttons');
+const backsoundToggler = document.querySelector('#btn-backsound-toggler');
 
 const csrf = document.querySelector('meta[name=csrf]').getAttribute('content');
 const baseUrl = document.querySelector('meta[name=url]').getAttribute('content');
@@ -18,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     setCountdown();
-    
+
     setInterval(() => {
         setCountdown();
     }, 1000 * 60 * 60);
@@ -31,6 +33,16 @@ window.addEventListener('load', function () {
     setTimeout(() => {
         loading.remove();
     }, 500);
+});
+
+window.addEventListener('scroll', function () {
+    if (this.window.scrollY >= 300) {
+        floatingButtons.style.opacity = 1;
+    }
+    // 
+    else {
+        floatingButtons.style.opacity = 0;
+    }
 });
 
 function initAOS() {
@@ -51,7 +63,7 @@ function openInvitation() {
     onboarding.classList.add('closed');
 
     initAOS();
-    backsound.play();
+    playBacksound();
 }
 
 function setCountdown() {
@@ -303,4 +315,29 @@ function validateRsvpWishes(invitationId, callbackFunction) {
         .catch((err) => {
             console.error(err);
         });
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function playBacksound() {
+    backsound.play();
+    backsoundToggler.querySelector('.up').classList.remove('d-none');
+    backsoundToggler.querySelector('.mute').classList.add('d-none');
+}
+
+function pauseBacksound() {
+    backsound.pause();
+    backsoundToggler.querySelector('.mute').classList.remove('d-none');
+    backsoundToggler.querySelector('.up').classList.add('d-none');
+}
+
+
+function toggleBacksound() {
+    if (backsound.paused) {
+        playBacksound();
+    } else {
+        pauseBacksound();
+    }
 }

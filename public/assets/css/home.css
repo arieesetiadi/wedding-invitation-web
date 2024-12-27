@@ -271,6 +271,15 @@ main.openned #hero .btn-invitation {
     padding: 4rem !important;
 }
 
+.floating-buttons {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 100;
+    transition: all 750ms ease-in-out;
+    opacity: 0;
+}
+
 /* Mobile */
 @media screen and (max-width: 767px) {
 
