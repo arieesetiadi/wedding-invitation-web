@@ -1,4 +1,4 @@
-<section id="gift" class="bg-primary text-white">
+<section id="gift" class="text-primary">
     <div class="header mb-lg-5 mb-5" data-aos="fade-in">
         <h2 class="fs-40 fw-700 ff-dancing-script px-lg-0 mb-4 px-5 text-center">
             Wedding Gift
@@ -22,7 +22,7 @@
                 <div class="main">
                     <div>
                         <span id="account-number-bca" class="d-block fs-32 fw-400 ff-nova-mono mb-3 text-black">
-                            60855685555
+                            5450193048
                         </span>
                         <div class="actions">
                             <button onclick="copyToClipboard(event, '#account-number-bca')" class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center">
@@ -47,16 +47,16 @@
                     <span class="d-inline-block fs-20 fw-600 ff-inter text-black">
                         Billy Gani
                     </span>
-                    <img width="150" height="24" src="{{ asset('assets/images/icons/bank-cimb-niaga.png') }}"
+                    <img width="77" height="24" src="{{ asset('assets/images/icons/bank-bca.png') }}"
                         alt="BCA Icon" class="mb-lg-0 mb-3">
                 </div>
                 <div class="main">
                     <div>
-                        <span id="account-number-cimb" class="d-block fs-32 fw-400 ff-nova-mono mb-3 text-black">
-                            705005654893
+                        <span id="account-number-bca2" class="d-block fs-32 fw-400 ff-nova-mono mb-3 text-black">
+                            6040670597
                         </span>
                         <div class="actions">
-                            <button onclick="copyToClipboard(event, '#account-number-cimb')" class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center">
+                            <button onclick="copyToClipboard(event, '#account-number-bca2')" class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center">
                                 <img class="d-inline-block pointer-events-none mx-1 mb-1" width="18" height="18"
                                     src="{{ asset('assets/images/icons/copy.svg') }}" alt="Copy icon">
                                 <span class="d-inline-block pointer-events-none fs-13 ff-inter text-normal mx-1">Copy account number</span>
