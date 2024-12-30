@@ -140,6 +140,10 @@
     color: var(--color-secondary) !important;
 }
 
+.text-secondary-lighter {
+    color: var(--color-secondary-lighter) !important;
+}
+
 .text-secondary-light {
     color: var(--color-secondary-light) !important;
 }

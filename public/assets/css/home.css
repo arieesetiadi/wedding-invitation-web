@@ -91,7 +91,7 @@ main.openned #hero .scroll-info {
     width: 60%;
 }
 
-#gallery {
+#gallery, #maps {
     background-image: url('/assets/images/general/bg-abstract.png');
     background-size: cover;
     background-position: center;

@@ -1,5 +1,5 @@
 <div class="maps-banner" data-aos="fade-in"></div>
-<section id="maps" class="bg-primary text-white">
+<section id="maps" class="text-white">
     <div class="header mb-lg-5 mb-5" data-aos="fade-in">
         <h2 class="fs-40 fw-700 ff-dancing-script px-lg-0 px-5 text-center">
             Seated Wedding Dinner
@@ -9,26 +9,25 @@
     <div class="container" data-aos="fade-in">
         <div class="mb-4">
             <span class="d-block fs-20 fw-400 ff-fira-sans mb-1 text-center">
-                Saturday, February 15th 2025
+                <span class="text-uppercase">Saturday, February 15</span><sup>th</sup> 2025
             </span>
             <span class="d-block fs-20 fw-400 ff-fira-sans text-center">
-                18.00 WIB
+                at 6 PM
             </span>
-        </div>
-
-        <div class="d-flex justify-content-center mb-4 py-2">
-            <img width="24" height="24" src="{{ asset('assets/images/icons/location-light.svg') }}"
-                alt="Location icon">
         </div>
 
         <div class="mb-4">
-            <span class="d-block fs-20 fw-700 ff-fira-sans mb-1 text-center">
-                Park Hyatt Hotel @ Dining Room Level 22
-            </span>
+            <div class="d-flex fs-20 fw-700 ff-fira-sans mb-1 text-center text-secondary-lighter justify-content-center align-items-center">
+                <div>
+                    <img width="18" height="18" src="{{ asset('assets/images/icons/location-secondary-lighter.svg') }}"
+                    alt="Location icon" class="mb-1">
+                    <span class="d-inline-block mx-1">Park Hyatt Hotel @ Dining Room Level 22</span>
+                </div>
+            </div>
             <span class="d-block fs-20 fw-400 ff-fira-sans text-center">
                 Jl. Kebon Sirih No.17-19, Kb. Sirih, Menteng, Jakarta, 10340
             </span>
-        </div>
+        </div>  
 
         <div class="d-flex justify-content-center mb-4 py-2">
             <iframe
@@ -39,7 +38,7 @@
 
         <div class="d-flex justify-content-center">
             <a target="_blank" href="https://www.google.com/maps/place/Park+Hyatt+Jakarta/@-6.1848267,106.8304276,17z/data=!4m20!1m10!3m9!1s0x2e69f43040ae2d5d:0x869c6c7a536c5938!2sPark+Hyatt+Jakarta!5m2!4m1!1i2!8m2!3d-6.1848098!4d106.8310014!16s%2Fg%2F11f52jx85x!3m8!1s0x2e69f43040ae2d5d:0x869c6c7a536c5938!5m2!4m1!1i2!8m2!3d-6.1848098!4d106.8310014!16s%2Fg%2F11f52jx85x?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" class="btn btn-secondary">
-                <span class="d-inline-block mx-1 fs-16 fw-500 ff-fira-sans">Get Direction</span>
+                <span class="d-inline-block mx-1 fs-16 fw-500 text-normal ff-fira-sans">Get Direction</span>
             </a>
         </div>
     </div>
