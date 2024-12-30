@@ -57,10 +57,15 @@ function initAOS() {
 function openInvitation() {
     const onboarding = document.querySelector('.onboarding');
     const main = document.querySelector('main');
+    const scrollInfo = document.querySelector('main #hero .scroll-info');
 
     main.classList.remove('d-none');
     main.classList.add('openned');
     onboarding.classList.add('closed');
+
+    setTimeout(() => {
+        scrollInfo.style.opacity = 1;
+    }, 100);
 
     initAOS();
     playBacksound();

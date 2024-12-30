@@ -1,5 +1,5 @@
 <section id="hero">
-    <div class="h-screen">
+    <div class="h-screen wrapper">
         <div class="row h-100">
             <div class="col-md-5 h-100 px-0 left">
                 <div class="content">
@@ -25,6 +25,16 @@
                 </div>
             </div>
             <div class="col-md-7 h-100 px-0 right"></div>
+        </div>
+
+        <div class="scroll-info">
+            <span class="d-block text-center text-white fs-20 fw-500 ff-fira-sans mb-2">
+                Scroll for more
+            </span>
+
+            <div class="d-flex justify-content-center align-items-center">
+                <img width="14" height="14" src="{{ asset('assets/images/icons/arrow-down-white.svg') }}" alt="Arrow icon">
+            </div>
         </div>
     </div>
 </section>

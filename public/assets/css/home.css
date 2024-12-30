@@ -6,7 +6,7 @@
     overflow: hidden;
     opacity: 1;
     bottom: 0;
-    transition: all 350ms ease-in-out;
+    transition: all 450ms ease-in-out;
 }
 
 .onboarding.closed {
@@ -15,6 +15,27 @@
 
 main.openned #hero .btn-invitation {
     display: none !important;
+}
+
+main #hero .wrapper {
+    position: relative;
+}
+
+main #hero .scroll-info {
+    position: absolute;
+    z-index: 100;
+    top: 88%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    transition: all 450ms ease-in-out;
+    opacity: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+main.openned #hero .scroll-info {
+    display: block;
 }
 
 #hero .left {
