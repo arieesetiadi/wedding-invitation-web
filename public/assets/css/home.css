@@ -91,6 +91,14 @@ main.openned #hero .scroll-info {
     width: 60%;
 }
 
+#gallery {
+    background-image: url('/assets/images/general/bg-abstract.png');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-primary);
+    background-blend-mode: multiply
+}
+
 #gallery .swiper-slide {
     background-size: cover;
     background-position: center;
