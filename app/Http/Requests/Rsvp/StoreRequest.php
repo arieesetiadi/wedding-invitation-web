@@ -32,6 +32,7 @@ class StoreRequest extends FormRequest
             'guest3name' => ['nullable', 'string', 'max:64'],
             'guest4name' => ['nullable', 'string', 'max:64'],
             'guest5name' => ['nullable', 'string', 'max:64'],
+            'greetings' => ['required', 'string'],
         ];
     }
 }

@@ -267,62 +267,12 @@ function storeRsvp(event) {
     });
 }
 
-function updateRsvp(event) {
-    event.preventDefault();
-
-    const form = event.target;
-    const formData = new FormData(form);
-    const btnSubmit = form.querySelector('button[type=submit]');
-    const invitationId = formData.get('invitation_id');
-
-    validateRsvpWishes(invitationId, function () {
-        btnSubmit.setAttribute('disabled', true);
-
-        fetch(`${baseUrl}/rsvps/${invitationId}`, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'X-CSRF-TOKEN': csrf,
-            },
-            body: formData,
-        })
-            .then((response) => response.json())
-            .then(() => {
-                form.reset();
-                fetchRsvps(1);
-                toastSuccess('Thank you for your lovely wishes!');
-            })
-            .catch((err) => {
-                console.error(err);
-            })
-            .finally(() => {
-                btnSubmit.removeAttribute('disabled');
-            });
-    });
-}
-
 function validateRsvp(invitationId, callbackFunction) {
     fetch(`${baseUrl}/rsvps/check/${invitationId}`)
         .then((response) => response.json())
         .then(({ exists }) => {
             if (exists) {
                 toastWarning('You already submitted an RSVP.');
-                return;
-            }
-
-            callbackFunction();
-        })
-        .catch((err) => {
-            console.error(err);
-        });
-}
-
-function validateRsvpWishes(invitationId, callbackFunction) {
-    fetch(`${baseUrl}/rsvps/check/${invitationId}/wishes`)
-        .then((response) => response.json())
-        .then(({ exists }) => {
-            if (exists) {
-                toastWarning('You already submitted a wishes message.');
                 return;
             }
 

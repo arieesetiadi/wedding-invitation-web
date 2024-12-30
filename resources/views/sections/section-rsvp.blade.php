@@ -11,7 +11,7 @@
                         RSVP
                     </h2>
                     <span class="d-block text-primary-light ff-fira-sans fs-16 fw-400 text-center">
-                        Please RSVP to confirm your attendance at our special day
+                        Kindly RSVP by <strong>January 31, 2025</strong>, to confirm your attendance on our special day
                     </span>
                 </div>
 
@@ -61,7 +61,7 @@
                         </div>
 
                         <!-- Input Partner's Name -->
-                        <div class="partner-name-wrapper">
+                        <div class="partner-name-wrapper mb-3">
                             @if ($invitation && $invitation->num_guest ?? 0 >= 2)
                                 @for ($i = 2; $i <= $invitation->num_guest; $i++)
                                     <div class="input-group mb-3">
@@ -71,6 +71,11 @@
                                     </div>
                                 @endfor
                             @endif
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <textarea name="greetings" class="form-control text-italic fs-16 fw-400 ff-fira-sans" rows="5"
+                                placeholder="Give greetings and prayers" required maxlength="200"></textarea>
                         </div>
 
                         <div class="d-flex justify-content-center">

@@ -40,15 +40,6 @@ class RsvpController extends Controller
         return response()->json([], Response::HTTP_CREATED);
     }
 
-    public function update(UpdateRequest $request, string $invitationId): JsonResponse
-    {
-        T_Rsvp::query()
-            ->where('invitation_id', $invitationId)
-            ->update($request->validated());
-
-        return response()->json([], Response::HTTP_OK);
-    }
-
     public function check(string $invitationId): JsonResponse
     {
         $exists = T_Rsvp
