@@ -6,8 +6,6 @@ const backsoundToggler = document.querySelector('#btn-backsound-toggler');
 const csrf = document.querySelector('meta[name=csrf]').getAttribute('content');
 const baseUrl = document.querySelector('meta[name=url]').getAttribute('content');
 
-let currentRsvpPage = 1;
-
 document.addEventListener('DOMContentLoaded', function () {
     new Swiper(".swiper-gallery", {
         spaceBetween: 20,
@@ -25,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
         setCountdown();
     }, 1000 * 60 * 60);
 
-    fetchRsvps();
+    fetchRsvpsDesktop();
+    fetchRsvpsMobile();
 });
 
 window.addEventListener('load', function () {
@@ -148,38 +147,106 @@ function showPartnerInput(event) {
     }
 }
 
-function fetchRsvps(page = currentRsvpPage, perPage = 5) {
-    const commentsWrapper = document.querySelector('.comments-wrapper');
-    const comments = commentsWrapper.querySelectorAll('.comment-item');
+function fetchRsvpsDesktop() {
+    fetch(`${baseUrl}/rsvps`)
+        .then((response) => response.json())
+        .then(({ rsvps }) => {
+            if (!rsvps.length) {
+                document.querySelector('.swiper-wishes-wrapper-lg .comments-wrapper').classList.add('d-none');
+                document.querySelector('.swiper-wishes-wrapper-lg .comments-empty-placeholder').classList.remove('d-none');
+                return;
+            } else {
+                document.querySelector('.swiper-wishes-wrapper-lg .comments-wrapper').classList.remove('d-none');
+                document.querySelector('.swiper-wishes-wrapper-lg .comments-empty-placeholder').classList.add('d-none');
+            }
 
-    fetch(`${baseUrl}/rsvps?page=${page}&perPage=${perPage}`)
+            const commentsWrapper = document.querySelector('.swiper-wishes-wrapper-lg .comments-wrapper');
+
+            commentsWrapper.querySelectorAll('.swiper-wishes').forEach(swiper => swiper.remove());
+
+            const swiperGroups = rsvps.length < 10
+                ? [rsvps]
+                : [
+                    rsvps.slice(0, Math.ceil(rsvps.length / 2)),
+                    rsvps.slice(Math.ceil(rsvps.length / 2))
+                ];
+
+            const wrapper = document.createElement('div');
+
+            wrapper.innerHTML = swiperGroups.map((rsvps, index) => `
+                <div class="swiper swiper-wishes swiper-wishes-${index + 1}" style="margin-bottom: 12px;">
+                    <div class="swiper-wrapper">
+                        ${rsvps.map(rsvp => `
+                            <div class="swiper-slide rounded-8 h-100 overflow-hidden">
+                                ${generateWishCard(rsvp)}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+
+            commentsWrapper.appendChild(wrapper);
+
+            swiperGroups.forEach((_, index) => {
+                const swiperElement = document.querySelector(`.swiper-wishes-${index + 1}`);
+                if (swiperElement) {
+                    new Swiper(swiperElement, {
+                        spaceBetween: 12,
+                        slidesPerView: 3,
+                        loop: true,
+                        freeMode: true,
+                        speed: 7000 + (index * 3000),
+                        autoplay: {
+                            delay: 0,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true
+                        },
+                        breakpoints: {
+                            1024: {
+                                slidesPerView: 4,
+                            }
+                        },
+                    });
+                }
+            });
+        })
+        .catch((err) => {
+            console.error(err);
+        });
+}
+
+function fetchRsvpsMobile(limit = 5, noIncrement = false) {
+    const commentsWrapper = document.querySelector('.swiper-wishes-wrapper-sm .comments-wrapper');
+    const comments = commentsWrapper.querySelectorAll('.comment-item');
+    const btnLoadMore = document.querySelector('#comments button.btn-load-more');
+
+    let count = limit;
+    let remainingMessages = 0;
+
+    if (noIncrement && comments.length <= limit) {
+        count = limit;
+    } else if (noIncrement) {
+        count = comments.length;
+    } else {
+        count = comments.length + limit;
+    }
+
+    btnLoadMore.setAttribute('disabled', true);
+
+    fetch(`${baseUrl}/rsvps?limit=${count}`)
         .then((response) => response.json())
         .then(({ rsvps, remaining }) => {
+            remainingMessages = remaining;
+
             if (!rsvps.length) {
-                document.querySelector('.comments-wrapper').classList.add('d-none');
-                document.querySelector('.comments-actions').classList.add('d-none');
-                document.querySelector('.comments-empty-placeholder').classList.remove('d-none');
+                document.querySelector('.swiper-wishes-wrapper-sm .comments-wrapper').classList.add('d-none');
+                document.querySelector('.swiper-wishes-wrapper-sm .comments-actions').classList.add('d-none');
+                document.querySelector('.swiper-wishes-wrapper-sm .comments-empty-placeholder').classList.remove('d-none');
                 return;
             } else {
-                document.querySelector('.comments-wrapper').classList.remove('d-none');
-                document.querySelector('.comments-actions').classList.remove('d-none');
-                document.querySelector('.comments-empty-placeholder').classList.add('d-none');
-            }
-
-            if (page <= 1) {
-                document.querySelector('.btn-rsvp-prev').classList.add('disabled');
-            } else {
-                document.querySelector('.btn-rsvp-prev').classList.remove('disabled');
-            }
-
-            if (!remaining) {
-                document.querySelector('.btn-rsvp-next').classList.add('disabled');
-            } else {
-                document.querySelector('.btn-rsvp-next').classList.remove('disabled');
-            }
-
-            if (rsvps.length == 0) {
-                return;
+                document.querySelector('.swiper-wishes-wrapper-sm .comments-wrapper').classList.remove('d-none');
+                document.querySelector('.swiper-wishes-wrapper-sm .comments-actions').classList.remove('d-none');
+                document.querySelector('.swiper-wishes-wrapper-sm .comments-empty-placeholder').classList.add('d-none');
             }
 
             comments.forEach(comment => comment.remove());
@@ -187,43 +254,20 @@ function fetchRsvps(page = currentRsvpPage, perPage = 5) {
             [...rsvps].forEach((rsvp, i) => {
                 const div = document.createElement('div');
                 const isLastItem = (i + 1) == rsvps.length;
-
-                div.innerHTML = `
-                    <div class="comment-item rounded-8 ${!isLastItem ? 'mb-3' : ''} bg-white p-4">
-                        <span class="d-block fs-16 fw-500 ff-fira-sans mb-2 text-black">
-                            ${rsvp['full_name']}
-                        </span>
-                        <p class="text-primary-light fs-16 fw-400 ff-fira-sans m-0 mb-2 p-0">
-                            ${rsvp['greetings_escaped']}
-                        </p>
-                        <div class="d-flex gap-2">
-                            <img src="${baseUrl}/assets/images/icons/clock-primary-light.svg" alt="Clock icon">
-                            <span class="d-inline-block text-primary-lightest fs-13 fw-400 ff-fira-sans">
-                                ${rsvp['create_date_diff']}
-                            </span>
-                        </div>
-                    </div>
-                `;
-
+                div.innerHTML = generateWishCard(rsvp, true, isLastItem);
                 commentsWrapper.appendChild(div.firstElementChild);
             });
-
-            currentRsvpPage = page;
         })
         .catch((err) => {
             console.error(err);
+        })
+        .finally(() => {
+            if (!remainingMessages) {
+                btnLoadMore.setAttribute('disabled', true);
+            } else {
+                btnLoadMore.removeAttribute('disabled');
+            }
         });
-}
-
-function fetchPrevRsvps() {
-    if (currentRsvpPage == 1) {
-        return;
-    }
-    fetchRsvps(currentRsvpPage - 1);
-}
-
-function fetchNextRsvps() {
-    fetchRsvps(currentRsvpPage + 1);
 }
 
 function storeRsvp(event) {
@@ -256,6 +300,9 @@ function storeRsvp(event) {
                     .querySelectorAll('.partner-name-wrapper .input-group')
                     .forEach(inputGroup => inputGroup.remove());
 
+                fetchRsvpsDesktop();
+                fetchRsvpsMobile(5, true);
+
                 toastSuccess('Thank you for your confirmation and blessing!');
             })
             .catch((err) => {
@@ -283,6 +330,25 @@ function validateRsvp(invitationId, callbackFunction) {
         });
 }
 
+function generateWishCard(rsvp, isForMobile = false, isLastItem = true) {
+    return `
+        <div class="comment-item rounded-8 ${!isLastItem ? 'mb-3' : ''} bg-white p-4 ${!isForMobile ? 'h-100' : ''}">
+            <span class="d-block fs-16 fw-500 ff-fira-sans mb-2 text-black">
+                ${rsvp['full_name']}
+            </span>
+            <p class="text-primary-light fs-16 fw-400 ff-fira-sans m-0 mb-2 p-0">
+                ${rsvp['greetings_escaped']}
+            </p>
+            <div class="d-flex gap-2">
+                <img src="${baseUrl}/assets/images/icons/clock-primary-light.svg" alt="Clock icon">
+                <span class="d-inline-block text-primary-lightest fs-13 fw-400 ff-fira-sans">
+                    ${rsvp['create_date_diff']}
+                </span>
+            </div>
+        </div>
+    `;
+}
+
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -298,7 +364,6 @@ function pauseBacksound() {
     backsoundToggler.querySelector('.mute').classList.remove('d-none');
     backsoundToggler.querySelector('.up').classList.add('d-none');
 }
-
 
 function toggleBacksound() {
     if (backsound.paused) {

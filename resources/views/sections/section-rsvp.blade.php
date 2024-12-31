@@ -80,7 +80,7 @@
 
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-secondary">
-                                <span class="d-inline-block fs-16 fw-500 ff-fira-sans mx-1">Submit</span>
+                                <span class="d-inline-block fs-16 fw-500 ff-fira-sans mx-1 text-normal">Submit</span>
                             </button>
                         </div>
                     </form>

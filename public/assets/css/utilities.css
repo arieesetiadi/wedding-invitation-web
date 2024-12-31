@@ -293,6 +293,12 @@
     border-color: var(--color-secondary);
 }
 
+.btn-secondary.disabled,
+.btn-secondary:disabled {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
 .btn-secondary:hover,
 .btn-secondary:focus,
 .btn-secondary:active {

@@ -12,6 +12,7 @@
         @include('sections.section-countdown')
         @include('sections.section-maps')
         @include('sections.section-rsvp')
+        @include('sections.section-wishes')
         @include('sections.section-gift')
         @include('sections.section-footer')
     </main>
