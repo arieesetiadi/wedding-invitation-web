@@ -16,7 +16,7 @@
                             Dear, <br><strong class="fs-16">
                                 {{ $invitation->guest_name ?? 'Guest' }}
                             </strong>
-                        </sp>
+                        </span>
                         <button onclick="openInvitation()" class="btn btn-secondary btn-pill btn-invitation d-block text-center text-white mt-4">
                             <img class="d-inline-block mx-1 mb-1" width="15" height="15" src="{{ asset('assets/images/icons/mail-open-white.svg') }}" alt="Mail icon">
                             <span class="d-inline-block mx-1 fs-16 text-normal ff-fira-sans">Open Invitation</span>

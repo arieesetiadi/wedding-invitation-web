@@ -1,6 +1,6 @@
 <section id="gallery">
     <div class="header mb-lg-5 mb-5" data-aos="fade-in">
-        <h2 class="text-white fs-40 fw-700 ff-dancing-script px-lg-0 px-5 text-center">
+        <h2 class="fs-40 fw-700 ff-dancing-script px-lg-0 px-5 text-center text-white">
             Moments
         </h2>
     </div>
@@ -9,16 +9,16 @@
         <div class="swiper swiper-gallery">
             <div class="swiper-wrapper">
                 <div class="swiper-slide rounded-16 overflow-hidden">
-                    <img class="photo-1" src="{{ asset('assets/images/gallery/photo-1.webp') }}" alt="Gallery Photo 1"
-                        class="rounded-16" />
+                    <img class="photo-1 rounded-16" src="{{ asset('assets/images/gallery/photo-1.webp') }}"
+                        alt="Gallery Photo 1" />
                 </div>
                 <div class="swiper-slide rounded-16 overflow-hidden">
-                    <img class="photo-2" src="{{ asset('assets/images/gallery/photo-2.webp') }}" alt="Gallery Photo 2"
-                        class="rounded-16" />
+                    <img class="photo-2 rounded-16" src="{{ asset('assets/images/gallery/photo-2.webp') }}"
+                        alt="Gallery Photo 2" />
                 </div>
                 <div class="swiper-slide rounded-16 overflow-hidden">
-                    <img class="photo-3" src="{{ asset('assets/images/gallery/photo-3.webp') }}" alt="Gallery Photo 3"
-                        class="rounded-16" />
+                    <img class="photo-3 rounded-16" src="{{ asset('assets/images/gallery/photo-3.webp') }}"
+                        alt="Gallery Photo 3" />
                 </div>
             </div>
         </div>
