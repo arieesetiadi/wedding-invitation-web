@@ -15,7 +15,7 @@
                 </div>
                 <h3 class="fw-32 fw-700 ff-dancing-script mb-3 text-center">Billy Gani</h3>
                 <span class="d-block text-primary-light fs-16 fw-400 ff-fira-sans mb-3 text-center">
-                    Son of <br>
+                    Third Son of <br>
                     Mr. Kusnan Gani & Mrs. Anna Susanna Komariah
                 </span>
                 <div class="d-flex justify-content-center">
@@ -43,7 +43,7 @@
                 </div>
                 <h3 class="fw-32 fw-700 ff-dancing-script mb-3 text-center">Diana Veronica</h3>
                 <span class="d-block text-primary-light fs-16 fw-400 ff-fira-sans mb-3 text-center">
-                    Daughter of <br>
+                    Eldest Daughter of <br>
                     Mr. Ong Tiam Beng & Mrs. Carolina Antika ✞
                 </span>
                 <div class="d-flex justify-content-center">

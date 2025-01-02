@@ -324,6 +324,10 @@
     pointer-events: none;
 }
 
+.transition-all {
+    transition: all 350ms ease-in-out;
+}
+
 @media screen and (max-width: 767px) {
 
     /* Font Size*/

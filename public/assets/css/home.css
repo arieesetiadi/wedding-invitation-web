@@ -29,7 +29,7 @@ main #hero .scroll-info {
     left: 0;
     right: 0;
     display: none;
-    transition: all 450ms ease-in-out;
+    transition: all 750ms ease-in-out;
     opacity: 0;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
@@ -99,6 +99,10 @@ main.openned #hero .scroll-info {
     background-position: center;
     background-color: var(--color-primary);
     background-blend-mode: multiply
+}
+
+#comments.bg-y-flip {
+    background-image: url('/assets/images/general/bg-abstract-flipped-y.png');
 }
 
 #gallery .swiper-slide {

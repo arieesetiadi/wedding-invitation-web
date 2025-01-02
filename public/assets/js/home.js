@@ -264,8 +264,10 @@ function fetchRsvpsMobile(limit = 5, noIncrement = false) {
         .finally(() => {
             if (!remainingMessages) {
                 btnLoadMore.setAttribute('disabled', true);
+                btnLoadMore.style.opacity = 0;
             } else {
                 btnLoadMore.removeAttribute('disabled');
+                btnLoadMore.style.opacity = 1;
             }
         });
 }
