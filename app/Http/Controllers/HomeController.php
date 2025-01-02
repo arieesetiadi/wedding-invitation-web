@@ -16,18 +16,18 @@ class HomeController extends Controller
             ->published()
             ->first();
 
-        $countdown = Carbon
-            ::now()
-            ->startOfDay()
-            ->diffInDays(
-                Carbon
-                    ::make('2025-02-15')
-                    ->startOfDay()
-            );
+        $today = Carbon::now()->startOfDay();
+        $eventDay = Carbon::make('2025-02-15')->startOfDay();
+        $countdown = $today->diffInDays($eventDay);
+
+        $isHappening = $eventDay->eq($today);
+        $isPassed = $eventDay->addDay(1)->eq($today);
 
         return view('index', [
             'invitation' => $invitation,
             'countdown' => $countdown,
+            'isHappening' => $isHappening,
+            'isPassed' => $isPassed,
         ]);
     }
 }

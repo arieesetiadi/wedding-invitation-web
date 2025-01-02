@@ -181,6 +181,16 @@ main.openned #hero .scroll-info {
     box-shadow: 0 0 0 5px rgba(119, 123, 98, 0.15);
 }
 
+#countdown .timer-days.message {
+    width: auto;
+    height: auto;
+    padding: 1.5rem;
+}
+
+#countdown .timer-days.message span {
+    font-size: 20px !important;
+}
+
 #maps .maps-wrapper {
     width: 400px;
     height: 400px;
@@ -406,6 +416,13 @@ main.openned #hero .scroll-info {
 
 /* Mobile */
 @media screen and (max-width: 767px) {
+    #countdown .timer-days.message>div {
+        text-wrap: auto;
+        overflow-wrap: break-word;
+        word-break: break-all;
+        white-space: normal;
+        max-width: 70vw;
+    }
 
     #gallery .swiper-slide img,
     #gallery img {
