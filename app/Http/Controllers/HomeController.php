@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Models\T_Invitation;
 
 class HomeController extends Controller
@@ -15,8 +16,18 @@ class HomeController extends Controller
             ->published()
             ->first();
 
+        $countdown = Carbon
+            ::now()
+            ->startOfDay()
+            ->diffInDays(
+                Carbon
+                    ::make('2025-02-15')
+                    ->startOfDay()
+            );
+
         return view('index', [
-            'invitation' => $invitation
+            'invitation' => $invitation,
+            'countdown' => $countdown,
         ]);
     }
 }

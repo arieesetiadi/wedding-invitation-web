@@ -16,15 +16,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-
-    setCountdown();
-
-    setInterval(() => {
-        setCountdown();
-    }, 1000 * 60 * 60);
-
+    
     fetchRsvpsDesktop();
     fetchRsvpsMobile();
+
+    // setCountdown();
+
+    // setInterval(() => {
+    //     setCountdown();
+    // }, 1000 * 60 * 60);
 });
 
 window.addEventListener('load', function () {
@@ -199,7 +199,7 @@ function fetchRsvpsDesktop() {
                         autoplay: {
                             delay: 0,
                             disableOnInteraction: false,
-                            pauseOnMouseEnter: true
+                            pauseOnMouseEnter: false
                         },
                         breakpoints: {
                             1024: {
@@ -232,6 +232,7 @@ function fetchRsvpsMobile(limit = 5, noIncrement = false) {
     }
 
     btnLoadMore.setAttribute('disabled', true);
+    btnLoadMore.querySelector('.loading').classList.remove('d-none');
 
     fetch(`${baseUrl}/rsvps?limit=${count}`)
         .then((response) => response.json())
@@ -262,6 +263,8 @@ function fetchRsvpsMobile(limit = 5, noIncrement = false) {
             console.error(err);
         })
         .finally(() => {
+            btnLoadMore.querySelector('.loading').classList.add('d-none');
+            
             if (!remainingMessages) {
                 btnLoadMore.setAttribute('disabled', true);
                 btnLoadMore.style.opacity = 0;

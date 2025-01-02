@@ -27,8 +27,9 @@
 
         <div class="comments-actions w-100 d-flex justify-content-center align-items-center pt-lg-0 pt-3">
             {{-- Load More Button --}}
-            <button onclick="fetchRsvpsMobile()" class="btn btn-load-more btn-secondary transition-all">
-                <span class="d-inline-block mx-1 fs-16 fw-500 text-normal ff-fira-sans">
+            <button onclick="fetchRsvpsMobile()" class="btn btn-load-more btn-secondary transition-all gap-8">
+                <span class="loading d-none spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                <span class="d-inline-block fs-16 fw-500 text-normal ff-fira-sans">
                     Load More
                 </span>
             </button>

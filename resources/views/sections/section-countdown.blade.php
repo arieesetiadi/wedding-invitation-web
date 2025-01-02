@@ -16,7 +16,7 @@
                     <div class="timer-days d-flex align-items-center justify-content-center bg-secondary rounded-16">
                         <div class="text-white">
                             <span class="d-block fs-36 ff-fira-code number mb-1 text-center">
-                                {{-- Generated from script --}}
+                                {{ $countdown }}
                             </span>
                             <span class="d-block fs-15 ff-fira-sans text-center">Days</span>
                         </div>

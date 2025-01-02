@@ -328,6 +328,10 @@
     transition: all 350ms ease-in-out;
 }
 
+.gap-8 {
+    gap: 8px;
+}
+
 @media screen and (max-width: 767px) {
 
     /* Font Size*/

@@ -1,4 +1,4 @@
-<div class="maps-banner" data-aos="fade-in"></div>
+<div class="maps-banner"></div>
 <section id="maps" class="text-white">
     <div class="header mb-lg-5 mb-5" data-aos="fade-in">
         <h2 class="fs-40 fw-700 ff-dancing-script px-lg-0 px-5 text-center">
