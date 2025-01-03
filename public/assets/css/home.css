@@ -1,12 +1,13 @@
 .onboarding {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: 10;
     overflow: hidden;
     opacity: 1;
     bottom: 0;
     transition: all 450ms ease-in-out;
+    overflow: hidden;
 }
 
 .onboarding.closed {
@@ -36,6 +37,10 @@ main #hero .scroll-info {
 
 main.openned #hero .scroll-info {
     display: block;
+}
+
+#hero {
+    overflow-x: hidden !important;
 }
 
 #hero .left {
@@ -171,8 +176,9 @@ main.openned #hero .scroll-info {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #countdown .timer-days {
@@ -422,6 +428,10 @@ main.openned #hero .scroll-info {
         word-break: break-all;
         white-space: normal;
         max-width: 70vw;
+    }
+
+    #countdown .wrapper {
+        width: 100% !important;
     }
 
     #gallery .swiper-slide img,
