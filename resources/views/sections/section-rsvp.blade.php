@@ -46,7 +46,9 @@
 
                         <!-- Input Guest Count -->
                         <div class="guest-count-wrapper input-group mb-3">
-                            <select onchange="showPartnerInput(event)" name="num_guest"
+                            <select 
+                                {{-- onchange="showPartnerInput(event)"  --}}
+                                name="num_guest"
                                 class="form-select text-italic fs-16 fw-400 ff-fira-sans" aria-label="Number Of Guest">
                                 <option selected value="">Number Of Guest</option>
                                 
@@ -61,7 +63,7 @@
                         </div>
 
                         <!-- Input Partner's Name -->
-                        <div class="partner-name-wrapper mb-3">
+                        {{-- <div class="partner-name-wrapper mb-3">
                             @if ($invitation && $invitation->num_guest ?? 0 >= 2)
                                 @for ($i = 2; $i <= $invitation->num_guest; $i++)
                                     <div class="input-group mb-3">
@@ -71,7 +73,7 @@
                                     </div>
                                 @endfor
                             @endif
-                        </div>
+                        </div> --}}
 
                         <div class="input-group mb-3">
                             <textarea name="greetings" class="form-control text-italic fs-16 fw-400 ff-fira-sans" rows="5"
