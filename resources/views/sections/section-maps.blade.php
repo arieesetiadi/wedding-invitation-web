@@ -1,5 +1,49 @@
 <div class="maps-banner"></div>
 <section id="maps" class="text-white">
+    {{-- Tea Pai --}}
+    <div class="header mb-lg-5 mb-5" data-aos="fade-in">
+        <h2 class="fs-40 fw-700 ff-dancing-script px-lg-0 px-5 text-center">
+            Tea Pai
+        </h2>
+    </div>
+
+    <div class="container" data-aos="fade-in">
+        <div class="mb-4">
+            <span class="d-block fs-20 fw-400 ff-fira-sans mb-1 text-center">
+                <span class="text-uppercase">Saturday, February 15</span><sup>th</sup> 2025
+            </span>
+            <span class="d-block fs-20 fw-400 ff-fira-sans text-center">
+                at 5 PM
+            </span>
+            <span class="d-block text-center fs-20 fw-400 ff-fira-sans">
+                <i>
+                    (Intimate Family Only)
+                </i>
+            </span>
+        </div>
+
+        <div>
+            <div class="d-flex fs-20 fw-700 ff-fira-sans mb-1 text-center text-secondary-lighter justify-content-center align-items-center">
+                <div>
+                    <img width="18" height="18" src="{{ asset('assets/images/icons/location-secondary-lighter.svg') }}"
+                    alt="Location icon" class="mb-1">
+                    <span class="d-inline-block mx-1">
+                        Park Hyatt Hotel @ Dining Room Level 22 (Private Room Chef's Table)
+                    </span>
+                </div>
+            </div>
+            <span class="d-block fs-20 fw-400 ff-fira-sans text-center">
+                Jl. Kebon Sirih No.17-19, Kb. Sirih, Menteng, Jakarta, 10340
+            </span>
+        </div>
+    </div>
+
+    <div class="divider d-flex align-items-center justify-content-center py-5">
+        <img class="d-none d-lg-block" src="{{ asset('assets/images/icons/divider.svg') }}" alt="Divider">
+        <img class="d-block d-lg-none" src="{{ asset('assets/images/icons/divider-short.svg') }}" alt="Divider">
+    </div>
+
+    {{-- Seated Wedding Dinner --}}
     <div class="header mb-lg-5 mb-5" data-aos="fade-in">
         <h2 class="fs-40 fw-700 ff-dancing-script px-lg-0 px-5 text-center">
             Seated Wedding Dinner
