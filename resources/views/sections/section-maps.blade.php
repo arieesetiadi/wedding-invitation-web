@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <div class="divider d-flex align-items-center justify-content-center py-5">
+    <div class="divider d-flex align-items-center justify-content-center py-5" data-aos="fade-in">
         <img class="d-none d-lg-block" src="{{ asset('assets/images/icons/divider.svg') }}" alt="Divider">
         <img class="d-block d-lg-none" src="{{ asset('assets/images/icons/divider-short.svg') }}" alt="Divider">
     </div>

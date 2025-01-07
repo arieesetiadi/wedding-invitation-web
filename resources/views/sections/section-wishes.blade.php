@@ -41,4 +41,16 @@
             </span>
         </div>
     </div>
+
+    <div class="d-none d-lg-flex justify-content-center" data-aos="fade-in">
+        <div class="gift-banner-wrapper">
+            <x-gift-banner />
+        </div>
+    </div>
+</section>
+
+<section plain class="d-block d-lg-none">
+    <div class="gift-banner-wrapper">
+        <x-gift-banner />
+    </div>
 </section>
