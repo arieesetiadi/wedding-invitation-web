@@ -55,9 +55,9 @@
                                     <span id="account-number-bca" class="d-block fs-32 fw-400 ff-nova-mono mb-3 text-black">
                                         5450193048
                                     </span>
-                                    <div class="actions">
+                                    <div class="actions d-block d-md-flex">
                                         <button onclick="copyToClipboard(event, '#account-number-bca')"
-                                            class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center w-100">
+                                            class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center w-xs-100 mb-2 mb-md-0">
                                             <img class="d-inline-block pointer-events-none mx-1 mb-1" width="18"
                                                 height="18" src="{{ asset('assets/images/icons/copy.svg') }}"
                                                 alt="Copy icon">
@@ -67,7 +67,7 @@
                                             </span>
                                         </button>
                                         <button
-                                            class="d-none d-md-block btn btn-sm btn-copied btn-secondary btn-pill d-block pointer-events-none hidden text-center text-white">
+                                            class="d-none w-xs-100 btn btn-sm btn-copied btn-secondary btn-pill d-block pointer-events-none hidden text-center text-white">
                                             <span class="d-inline-block fs-13 ff-inter text-normal mx-1">Copied!</span>
                                         </button>
                                     </div>
@@ -92,9 +92,9 @@
                                         class="d-block fs-32 fw-400 ff-nova-mono mb-3 text-black">
                                         6040670597
                                     </span>
-                                    <div class="actions">
+                                    <div class="actions d-block d-md-flex">
                                         <button onclick="copyToClipboard(event, '#account-number-bca2')"
-                                            class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center w-100">
+                                            class="btn btn-sm btn-white btn-pill d-block text-primary-light text-center w-xs-100 mb-2 mb-lg-0">
                                             <img class="d-inline-block pointer-events-none mx-1 mb-1" width="18"
                                                 height="18" src="{{ asset('assets/images/icons/copy.svg') }}"
                                                 alt="Copy icon">
@@ -104,7 +104,7 @@
                                             </span>
                                         </button>
                                         <button
-                                            class="d-none d-md-block btn btn-sm btn-copied btn-secondary btn-pill d-block pointer-events-none hidden text-center text-white">
+                                            class="d-none w-xs-100 btn btn-sm btn-copied btn-secondary btn-pill d-block pointer-events-none hidden text-center text-white">
                                             <span class="d-inline-block fs-13 ff-inter text-normal mx-1">Copied!</span>
                                         </button>
                                     </div>

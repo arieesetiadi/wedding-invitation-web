@@ -96,9 +96,16 @@ function copyToClipboard(event, selector) {
     textarea.setSelectionRange(0, 99999);
 
     navigator.clipboard.writeText(textarea.value).then(function () {
-        alertCopied.classList.remove('hidden');
+        alertCopied.classList.remove('d-none');
+        setTimeout(() => {
+            alertCopied.classList.remove('hidden');
+        }, 100);
+
         setTimeout(() => {
             alertCopied.classList.add('hidden');
+            setTimeout(() => {
+                alertCopied.classList.add('d-none');
+            }, 100);
         }, 2000);
     }, function (err) {
         console.error(err);
